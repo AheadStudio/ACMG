@@ -1,0 +1,23 @@
+extends ../templates/base
+
+block content
+    div(class="page-order")
+        form(class="form form-order")
+            div(class="form-order-title") Оформление заказа
+            
+            
+            div(class="form-section")
+                div(class="form-section-name") Способ доставки
+                div(class="form-row form-row--border-bottom form-row--w1")
+                    div(class="form-holder")
+                        label(for="name", class="form-label form-label--flex")
+                            input(type="radio", id="method_1", name="method_1", required, class="form-item form-item--radio")
+                            span(class="form-item-title") Самовывоз из офиса (Москва, пер. Столярный, д. 3,)
+                        span(class="form-item-price") 0.– 
+                        a(href="#", class="link link-black") Подробнее о способе доставки 
+                    
+                    
+            div(class="form-row form-row--w1")
+                button(type="submit", class="button button--black button-color--pink") Отправить
+                
+        div(class="order-basket")

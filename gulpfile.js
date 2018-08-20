@@ -700,9 +700,9 @@ gulp.task("default", ["browser-sync"], function() {
 	});
 
 	// Почтовый шаблон
-	watch([settings.paths.front.email + "*.jade"], function(e) {
-		gulp.start("email");
-	});
+	// watch([settings.paths.front.email + "*.jade"], function(e) {
+	// 	gulp.start("email");
+	// });
 
 	// Главная
 	watch([settings.paths.front.root + "index.jade"], function(e) {

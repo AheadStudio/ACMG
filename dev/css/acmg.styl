@@ -85,7 +85,7 @@ body
 body
 	&.fixed-header
 		.page-content
-			margin-top 206px
+			padding-top 206px
 
 		.page-header
 			position fixed
@@ -837,6 +837,96 @@ body
 				&:last-child
 					margin-bottom 0
 
+.jcf-number
+	position relative
+	display inline-block
+	width 100px
+	text-align center
+
+	.jcf-real-element
+		display inline-block
+		width 50px
+		padding 8px 10px 7px 10px
+		box-sizing border-box
+		border 1px solid #ccc
+		background-color #fff
+		font-family "ProximaNovaRegular"
+		font-size 14px
+		line-height 16px
+		color #000
+		text-align center
+		-moz-appearance textfield
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button
+			-webkit-appearance none
+
+	.jcf-btn-dec
+	.jcf-btn-inc
+		position absolute
+		top 50%
+		display block
+		width 18px
+		height 18px
+
+		transform translateY(-50%)
+
+		cursor pointer
+
+	.jcf-btn-dec
+		left 0
+
+		&:before
+			content ""
+			position absolute
+			top 50%
+
+			margin-top -1px
+			display block
+			width 100%
+			height 2px
+
+			background #4a4a4a
+			transition background 0.3s $transitionAnimation
+
+		&:hover
+			&:before
+				background $colorPink
+
+	.jcf-btn-inc
+		right 0
+
+		&:before
+			content ""
+			position absolute
+			top 50%
+
+			margin-top -1px
+			display block
+			width 100%
+			height 2px
+
+			background #4a4a4a
+			transition background 0.3s $transitionAnimation
+
+		&:after
+			content ""
+			position absolute
+			top 0
+			left 50%
+			margin-left -1px
+			display block
+			width 2px
+			height 100%
+
+			background #4a4a4a
+
+			transition background 0.3s $transitionAnimation
+
+		&:hover
+			&:after
+			&:before
+				background $colorPink
 /* //form */
 
 /* load */
@@ -929,6 +1019,7 @@ body
 	display flex
 	justify-content flex-start
 	align-items flex-start
+	flex-wrap wrap
 
 	margin-bottom 100px
 
@@ -965,6 +1056,9 @@ body
 
 			height 380px
 			background $colorGray
+
+			padding 40px 45px
+			box-sizing border-box
 
 			margin-bottom 25px
 
@@ -1721,7 +1815,6 @@ body
 				&:last-child
 					margin-bottom 0
 
-
 	.catalog-form
 		.form-row
 			margin-bottom 25px
@@ -2156,6 +2249,52 @@ body
 		.catalog-reviews-auth-button
 			width 49%
 
+	.catalog-sub
+		display flex
+		justify-content space-between
+		align-items center
+
+		padding 40px 50px
+		box-sizing border-box
+
+		margin-top 50px
+		margin-bottom 90px
+
+		background #f7f7f7
+
+		.catalog-sub-holder
+			max-width 20%
+			width 100%
+			margin-right 5%
+
+			img
+				display block
+				width 100%
+
+		.catalog-sub-text
+			max-width 50%
+			width 100%
+			margin-right 10%
+
+			font-size 20px
+			font-weight 600
+			line-height 32px
+
+
+		.catalog-sub-img
+			max-width 15%
+			width 100%
+
+			.catalog-sub-img-holder
+				display block
+				width 100%
+
+				margin-bottom 20px
+
+				img
+					display block
+					width 100%
+
 
 .catalog-similar
 	.title
@@ -2225,3 +2364,194 @@ body
 
 .contacts
 	margin-bottom 200px
+
+
+.basket
+	max-width 1075px
+	margin 0 auto 135px auto
+	padding 0 20px
+	box-sizing border-box
+
+.basket-list
+	margin-bottom 45px
+
+	.basket-item
+		padding 10px 0
+		box-sizing border-box
+
+		border-bottom 1px solid #000
+
+		display flex
+		justify-content space-between
+		align-items center
+
+		transition transform 0.3s $transitionAnimation, opacity 0.3s $transitionAnimation
+
+		&:first-child
+			border-top 1px solid #000
+
+		&.hide
+			opacity 0
+			transform translateX(-50px)
+
+		.basket-holder
+			max-width 17%
+			width 100%
+
+			display flex
+			justify-content center
+			align-items center
+
+			background #f7f7f7
+			padding 20px 40px
+
+			margin-right 5%
+
+			box-sizing border-box
+
+			img
+				display block
+				width 100%
+
+		.basket-info
+			max-width 78%
+			width 100%
+
+		.basket-info-row
+			display flex
+			justify-content space-between
+			align-items center
+			margin-bottom 60px
+
+			&:last-child
+				margin-bottom 0
+
+		.basket-item-name
+			display block
+			flex 1 1 0
+			font-size 18px
+			font-family "ProximaNovaBold"
+
+		.basket-item-count
+			margin-right 60px
+
+		.basket-item-number
+			margin-right 60px
+			font-size 18px
+			font-family "ProximaNovaBold"
+
+		.basket-item-close
+			width 15px
+			height 15px
+			margin-right 15px
+
+			button
+				display block
+				width 100%
+				height 100%
+				padding 0
+
+				svg
+					display block
+					width 100%
+
+					path
+						transition fill 0.3s $transitionAnimation
+
+				&:hover
+					svg
+						path
+							fill $colorPink
+
+
+		.basket-item-prop-list
+			display flex
+			justify-content flex-start
+			align-items center
+			flex-wrap wrap
+
+			.basket-item-prop-item
+				margin-right 45px
+				margin-bottom 10px
+
+				.basket-item-prop-name
+					display inline-block
+					margin-right 5px
+
+					font-size 14px
+					color #9B9B9B
+
+				.basket-item-prop-val
+					display inline-block
+					font-size 14px
+					font-family "ProximaNovaBold"
+
+.basket-form
+	overflow hidden
+
+.basket-result
+	width 50%
+	float right
+
+	.basket-summ
+		display flex
+		justify-content space-between
+		align-items center
+
+		margin-bottom 40px
+
+		.basket-summ-all
+			font-size 14px
+			font-family "ProximaNovaBold"
+
+		.basket-summ-count
+			margin-right 90px
+			font-size 16px
+			font-family "ProximaNovaBold"
+
+	.basket-promocode
+		position relative
+		display flex
+		align-items stretch
+		justify-content space-between
+
+		margin-bottom 40px
+
+		.basket-promocode-text
+			display inline-block
+			padding 15px
+			box-sizing border-box
+			border 1px solid #4a4a4a
+			width 70%
+			font-size 14px
+			font-weight 600
+
+		.basket-promocode-button
+			display inline-block
+			width 30%
+			border 1px solid #4a4a4a
+
+	.basket-send
+		margin-bottom 40px
+
+.page-order
+	max-width 1070px
+	padding 0 20px
+	box-sizing border-box
+
+	margin 0 auto
+
+.page-header-order
+	max-width 1070px
+	padding 0 20px
+	margin 55px auto 0 auto
+	box-sizing border-box
+
+	.header-order-holder
+		max-width 220px
+		width 100%
+
+
+		svg
+			display block
+			width 100%

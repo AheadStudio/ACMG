@@ -7,4 +7,123 @@ block content
                 div(class="page-text")
                     h1 Ваша карзина
             
-            div(class="basket-list")
+            form(class="form basket-form")
+                div(class="basket-list")
+                    div(class="basket-item")
+                        div(class="basket-holder")
+                            img(src="../dummy/magazine2.png")
+                        div(class="basket-info")
+                            div(class="basket-info-row")
+                                div(class="basket-item-name") Подписка на журнал Forbes
+                                div(class="basket-item-count")
+                                    input(type="number", class="form-item form-item--number", step="1", value="1")
+                                div(class="basket-item-number", data-price="1200") 1 200.– 
+                                div(class="basket-item-close")
+                                    button(type="button", class="button button-basket-close")
+                                        include ../../prod/svg/close.svg
+                            div(class="basket-info-row")
+                                div(class="basket-item-prop-list")
+                                    div(class="basket-item-prop-item")
+                                        div(class="basket-item-prop-name") Период:
+                                        div(class="basket-item-prop-val") 6 месяцев
+                                        
+                    div(class="basket-item")
+                        div(class="basket-holder")
+                            img(src="../dummy/shop14.png")
+                        div(class="basket-info")
+                            div(class="basket-info-row")
+                                div(class="basket-item-name") Noname AIC Denim Light Wash 30" Inseam
+                                div(class="basket-item-count")
+                                    input(type="number", class="form-item form-item--number", step="1", value="5")
+                                div(class="basket-item-number", data-price="5200") 5 200.– 
+                                div(class="basket-item-close")
+                                    button(type="button", class="button button-basket-close")
+                                        include ../../prod/svg/close.svg
+                            div(class="basket-info-row")
+                                div(class="basket-item-prop-list")
+                                    div(class="basket-item-prop-item")
+                                        div(class="basket-item-prop-name") Размер:
+                                        div(class="basket-item-prop-val") L
+                                    div(class="basket-item-prop-item")
+                                        div(class="basket-item-prop-name") Цвет:
+                                        div(class="basket-item-prop-val") Голубой
+                                        
+                    div(class="basket-item")
+                        div(class="basket-holder")
+                            img(src="../dummy/shop1.png")
+                        div(class="basket-info")
+                            div(class="basket-info-row")
+                                div(class="basket-item-name") Noname AIC Denim Light Wash 30" Inseam
+                                div(class="basket-item-count")
+                                    input(type="number", class="form-item form-item--number", step="1", data-price="5200", value="1")
+                                div(class="basket-item-number", data-price="1200") 1 200.– 
+                                div(class="basket-item-close")
+                                    button(type="button", class="button button-basket-close")
+                                        include ../../prod/svg/close.svg
+                            div(class="basket-info-row")
+                                div(class="basket-item-prop-list")
+                                    div(class="basket-item-prop-item")
+                                        div(class="basket-item-prop-name") Размер:
+                                        div(class="basket-item-prop-val") L
+                                    div(class="basket-item-prop-item")
+                                        div(class="basket-item-prop-name") Цвет:
+                                        div(class="basket-item-prop-val") Серый
+                                    div(class="basket-item-prop-item")
+                                        div(class="basket-item-prop-name") Вышивка:
+                                        div(class="basket-item-prop-val") Белая
+                                    div(class="basket-item-prop-item")
+                                        div(class="basket-item-prop-name") Место нанесения:
+                                        div(class="basket-item-prop-val") Впереди вверху
+                    
+                    div(class="basket-item")
+                        div(class="basket-holder")
+                            img(src="../dummy/shop14.png")
+                        div(class="basket-info")
+                            div(class="basket-info-row")
+                                div(class="basket-item-name") Noname AIC Denim Light Wash 30" Inseam
+                                div(class="basket-item-count")
+                                    input(type="number", class="form-item form-item--number", step="1", value="1")
+                                div(class="basket-item-number", data-price="5200") 5 200.– 
+                                div(class="basket-item-close")
+                                    button(type="button", class="button button-basket-close")
+                                        include ../../prod/svg/close.svg
+                            div(class="basket-info-row")
+                                div(class="basket-item-prop-list")
+                                    div(class="basket-item-prop-item")
+                                        div(class="basket-item-prop-name") Размер:
+                                        div(class="basket-item-prop-val") L
+                                    div(class="basket-item-prop-item")
+                                        div(class="basket-item-prop-name") Цвет:
+                                        div(class="basket-item-prop-val") Голубой
+                    
+                    div(class="basket-item")
+                        div(class="basket-holder")
+                            img(src="../dummy/shop2.png")
+                        div(class="basket-info")
+                            div(class="basket-info-row")
+                                div(class="basket-item-name") Просто шорты
+                                div(class="basket-item-count")
+                                    input(type="number", class="form-item form-item--number", step="1", value="1")
+                                div(class="basket-item-number", data-price="5200") 5 200.– 
+                                div(class="basket-item-close")
+                                    button(type="button", class="button button-basket-close")
+                                        include ../../prod/svg/close.svg
+                            div(class="basket-info-row")
+                                div(class="basket-item-prop-list")
+                                    div(class="basket-item-prop-item")
+                                        div(class="basket-item-prop-name") Размер:
+                                        div(class="basket-item-prop-val") L
+                    
+                div(class="basket-back")                    
+                    a(href="#", class="link link-black--bottom") Вернуться к покупкам
+                    
+                div(class="basket-result")              
+                    div(class="basket-summ") 
+                        span(class="basket-summ-all") Всего
+                        span(class="basket-summ-count") 11 000.– 
+                    div(class="basket-promocode")
+                        input(type="text", id="code", name="code", class="basket-promocode-text", placeholder="Введите промокод (если есть)")
+                        button(type="button", class="button button--border-black basket-promocode-button") Обновить
+                    div(class="basket-send")
+                        button(type="submit", class="button button--black button-color--pink") Оформить заказ
+                        

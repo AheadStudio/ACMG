@@ -79,6 +79,22 @@
                 "mobile": "0"
             }
         },
+        "journals": {
+            "name": "Журналы",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        },
+        "order": {
+            "name": "Оформление заказа",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        },
         "basket": {
             "name": "Карзина",
             "progress": {

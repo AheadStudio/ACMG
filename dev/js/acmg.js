@@ -372,8 +372,9 @@
 						self.addToBasket();
 						self.closeBasket();
 						self.showTooltipRate();
+						self.busketNumber();
+						self.busketremoveItem();
 					},
-
 
 					basket: function() {
 						$(".header-basket", $sel.body).tooltipster({
@@ -480,7 +481,40 @@
 							$($el, $sel.body).tooltipster('content', $($rateSelect.find("option:selected").attr("id"))).tooltipster("open");
 							e.preventDefault();
 						})
-					}
+					},
+
+					busketNumber: function() {
+						var self = this,
+							$number = $(".basket-form").find(".form-item--number");
+
+						$number.on("change", function() {
+							var $el = $(this),
+								$container = $el.closest(".basket-item"),
+								$priceText = $container.find("[data-price]");
+
+							$newPrice = $priceText.data("price") * $el.val();
+							$newPrice = String($newPrice);
+
+							$priceText.text($newPrice.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ") + ".–");
+						})
+					},
+
+					busketremoveItem: function() {
+						var self = this,
+							$closeButton = $(".basket-form").find(".button-basket-close");
+
+						$closeButton.on("click", function() {
+							var $el = $(this),
+								$container = $el.closest(".basket-item");
+
+							$container.addClass("hide");
+
+							setTimeout(function() {
+								$container.remove();
+							}, 300);
+						})
+					},
+
 				},
 
 
