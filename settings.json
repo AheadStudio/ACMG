@@ -1,0 +1,182 @@
+{
+    "info": {
+        "name": "ACMG - интернет магазин одежды",
+        "code": "acmg",
+        "year": "2018",
+        "notes": "",
+        "productionUrl": "http://wemakesites.ru/projects/acmg/",
+        "siteName": "acmg",
+        "title": "ACMG - интернет магазин одежды",
+        "description": "Верстка сайта ACMG",
+        "keywords": "",
+        "image": "/i/og.jpg"
+    },
+    "customer": {
+        "name": "Виктор",
+        "company": "GoodCode",
+        "email": "gorponffffff@yandex.ru",
+        "removeCopyrights": false
+    },
+    "ftp": {
+        "host": "wemakesites.ru",
+        "login": "wms",
+        "password": "7A4m8C7q"
+    },
+    "pages": {
+        "home": {
+            "name": "Главная",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        },
+        "catalog": {
+            "name": "Каталог",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        },
+        "card-accessories": {
+            "name": "Карточка аксессуара",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        },
+        "card-brand": {
+            "name": "Карточка бренда",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        },
+        "card-event": {
+            "name": "Карточка мероприятия",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        },
+        "card-magazine": {
+            "name": "Карточка журнала",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        },
+        "brand": {
+            "name": "Бренд",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        },
+        "basket": {
+            "name": "Карзина",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        },
+        "catalog-load": {
+            "name": "Каталог подгрузка",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            },
+            "fordev": true
+        },
+        "reviews-load": {
+            "name": "Отзывы подгрузка",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            },
+            "fordev": true
+        },
+        "brands": {
+            "name": "Бренды",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        },
+        "about": {
+            "name": "О проекте",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        },
+        "delivery": {
+            "name": "Доставка",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        },
+        "contacts": {
+            "name": "Контакты",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        }
+    },
+    "paths": {
+        "dev": {
+            "root": "./dev/",
+            "pages": "./dev/pages/",
+            "dummy": "./dev/dummy/",
+            "templates": "./dev/templates/",
+            "lib": "./dev/lib",
+            "js": "./dev/js/",
+            "images": "./dev/i/",
+            "icons": "./dev/i/icons/",
+            "svg": "./dev/svg/",
+            "svgIcons": "./dev/svg/icons/",
+            "css": "./dev/css/",
+            "cssLib": "./dev/lib/css/",
+            "htmlLib": "./dev/lib/html/",
+            "jsLib": "./dev/lib/js/",
+            "fonts": "./dev/fonts/"
+        },
+        "prod": {
+            "root": "./prod/",
+            "archives": "./prod/archives/",
+            "dummy": "./prod/dummy/",
+            "fonts": "./prod/fonts",
+            "images": "./prod/i/",
+            "svg": "./prod/svg/",
+            "css": "./prod/css/",
+            "js": "./prod/js/",
+            "pages": "./prod/pages/"
+        },
+        "front": {
+            "root": "./front/",
+            "email": "./front/email/"
+        },
+        "tmp": {
+            "root": "./tmp/"
+        }
+    },
+    "access": {
+        "user": "demo",
+        "password": "7DZ7cuvUa4"
+    }
+}

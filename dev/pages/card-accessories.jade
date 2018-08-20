@@ -1,0 +1,121 @@
+extends ../templates/base
+
+block content
+    div(class="page-inner page-inner--w1")
+        div(class="catalog")
+            div(class="catalog-breadcrumbs")
+                a(href="catalog.html", class="link link-black--bottom catalog-breadcrumbs-item") Каталог
+                a(href="brands.html", class="link link-black--bottom catalog-breadcrumbs-item") Аксесуары
+                div(class="link catalog-breadcrumbs-item") BRATISLAVA
+                
+            div(class="catalog-card")
+                div(class="catalog-card-item catalog-card-item--65")
+                    div(class="catalog-slider slider")
+                        div(class="slider-list")
+                            div(class="slider-item")
+                                img(src="../dummy/bag.png", class="slider-img")
+                            div(class="slider-item")
+                                img(src="../dummy/bag.png", class="slider-img")
+                            div(class="slider-item")
+                                img(src="../dummy/bag.png", class="slider-img")
+                            div(class="slider-item")
+                                img(src="../dummy/bag.png", class="slider-img")
+                        div(class="slider-arrow-container")
+                    
+                    div(class="catalog-reviews")
+                        div(class="catalog-reviews-title") Отзывы от товаре
+                        
+                        div(id="reviews", class="catalog-reviews-list")
+                            div(class="catalog-reviews-item")
+                                div(class="catalog-reviews-container")
+                                    div(class="catalog-reviews-name") Елена
+                                    div(class="catalog-reviews-text") Очень рада покупке, кожа очень мягкая, качество отличное! Ремень достаточно длинный, одно отделение, есть кармашки. Удобная и приятная, советую!
+                                    div(class="catalog-reviews-date") 6 апреля 2018
+                            
+                            div(class="catalog-reviews-item")
+                                div(class="catalog-reviews-container")
+                                    div(class="catalog-reviews-name") Клава
+                                    div(class="catalog-reviews-text") Что говорить то? Классная!
+                                    div(class="catalog-reviews-date") 10 апреля 2018
+                                
+                            div(class="catalog-reviews-item catalog-reviews-item-answer")
+                                div(class="catalog-reviews-holder")
+                                    img(src="../dummy/brands/brand12.png", alt="")
+                                div(class="catalog-reviews-container")
+                                    div(class="catalog-reviews-name") Ответ от ACMG store
+                                    div(class="catalog-reviews-text") Добрый день! С подробными условиями доставки вы можете ознакомиться на вкладке "Доставка" https://www.kupivip.ru/info/delivery.
+                                    div(class="catalog-reviews-date") 6 апреля 2018
+                                
+                            div(class="catalog-reviews-item")
+                                div(class="catalog-reviews-container")
+                                    div(class="catalog-reviews-name") Елена
+                                    div(class="catalog-reviews-text") Обычная сумка , на 5 тысяч она не тянет . Прочитав отзыв выше скажу: пахнет кожей !
+                                    div(class="catalog-reviews-date") 6 апреля 2018
+                                
+                        div(class="load")
+                            a(href="reviews-load.html", data-container="#reviews", data-itemsselector=".catalog-reviews-item", class="link load-container")
+                                div(class="load-more")
+                        
+                    div(class="catalog-reviews-auth")
+                        div(class="catalog-reviews-auth-text") Чтобы оставить свой отзыв, нужно авторизоваться
+                        button(type="submit", class="button button--border-black catalog-reviews-auth-button") Войти
+                            
+                div(class="catalog-card-item catalog-card-item--30")
+                    div(class="catalog-item-info")
+                        div(class="page-text")
+                            a(href="#", class="link link-black--bottom-reverse catalog-item-section") BRATISLAVW
+                            div(class="catalog-item-name") Сумка Barrymore
+                            div(class="catalog-item-price") 7 800.– 
+                            div(class="catalog-item-text") Сделай свою уникальную вышивку. Выбери цвет свитшот. Выбери один из трех вариантов расположения вышивки и ее цвет. Напиши свое имя рядом с брендом SNC. 
+                            div(class="catalog-item-composition") 
+                                dl
+                                    dt Состав:
+                                    dd 100% натуральная кожа
+                            form(class="form catalog-form")
+                                div(class="form-row form-catalog-order")
+                                    input(type="text", id="name", name="name", placeholder="1", class="form-item form-item--text form-catalog-order-number")
+                                    button(type="submit", class="button button--black button-color--pink form-catalog-order-submit") Купить
+                                    button(type="button", class="button form-catalog-order-favorite")
+                                        include ../../prod/svg/favorite.svg
+                            
+    div(class="page-inner page-inner--w1")
+        div(class="catalog-similar")
+            div(class="title") Похожие товары
+            div(class="flex-list flex-list--3")
+                div(class="flex-item")
+                    a(href="#", class="link flex-holder")
+                        img(src="../dummy/magazine.png", class="flex-img")
+                    div(class="flex-tags-container")
+                        a(href="category.html", class="link link-pink link-pink--bottom-reverse flex-category") журналы
+                        a(href="brand.html", class="link link-black--bottom-reverse flex-brand") Forbes 
+                    div(class="flex-title-container")
+                        a(href="#", class="link flex-title") Подписка на 12 месяцев 
+                    div(class="flex-text") Самый влиятельный независимый деловой проект в мире. Forbes пишет об историях успеха и поражений предпринимателей, новых идеях для бизнеса и инвестиций, а также публикует авторитетные рейтинги.
+                    div(class="flex-price") 4 200.– 
+                    
+                    
+                div(class="flex-item")
+                    div(class="flex-new") new
+                    a(href="#", class="link flex-holder")
+                        img(src="../dummy/shop1.png", class="flex-img")
+                    div(class="flex-tags-container")
+                        a(href="category.html", class="link link-pink link-pink--bottom-reverse flex-category") одежда
+                        a(href="brand.html", class="link link-black--bottom-reverse flex-brand") ANTW x SNC.  
+                    div(class="flex-title-container")
+                        a(href="#", class="link flex-title") Свитшот Barrymore
+                    div(class="flex-text") Настоящий уровень качества и стиля. Коллекция для тех, кто ценит свободу как внешнюю, так и внутри себя. Через свою художественную индивидуальность Мариам Чумбуридзе — основатель марки — ANTW раскрывает всю красоту ткани и эстетику пошива.
+                    div(class="flex-price") 4 799.– 
+                    
+                div(class="flex-item")
+                    a(href="#", class="link flex-holder")
+                        img(src="../dummy/magazine2.png", class="flex-img")
+                    div(class="flex-tags-container")
+                        a(href="category.html", class="link link-pink link-pink--bottom-reverse flex-category") журналы
+                        a(href="brand.html", class="link link-black--bottom-reverse flex-brand") Forbes 
+                    div(class="flex-title-container")
+                        a(href="#", class="link flex-title") Подписка на 6 месяцев 
+                    div(class="flex-text") Самый влиятельный независимый деловой проект в мире. Forbes пишет об историях успеха и поражений предпринимателей, новых идеях для бизнеса и инвестиций, а также публикует авторитетные рейтинги.
+                    div(class="flex-price") 2 100.– 
+                    
+
+        

@@ -1,0 +1,42 @@
+extends ../templates/base
+
+block content
+    div(class="page-inner page-inner--w1")
+        div(class="catalog")
+            div(id="catalog", class="flex-list flex-list--3")    
+                div(class="flex-item")
+                    a(href="#", class="link flex-holder")
+                        img(src="../dummy/shop7.png", class="flex-img")
+                    div(class="flex-tags-container")
+                        a(href="category.html", class="link link-pink link-pink--bottom-reverse flex-category") одежда
+                        a(href="brand.html", class="link link-black--bottom-reverse flex-brand") ANTW x SNC  
+                    div(class="flex-title-container")
+                        a(href="#", class="link flex-title") Обложка на студенческий билет
+                    div(class="flex-text") Настоящий уровень качества и стиля. Коллекция для тех, кто ценит свободу как внешнюю, так и внутри себя. Через свою художественную индивидуальность Мариам Чумбуридзе — основатель марки — ANTW раскрывает всю красоту ткани и эстетику пошива.
+                    div(class="flex-price") 23 900.– 
+                    
+                div(class="flex-item")
+                    a(href="#", class="link flex-holder", style="background-image: url(../dummy/shop8.png)")
+                    div(class="flex-tags-container")
+                        a(href="category.html", class="link link-pink link-pink--bottom-reverse flex-category") одежда
+                        a(href="brand.html", class="link link-black--bottom-reverse flex-brand") InFolio
+                    div(class="flex-title-container")
+                        a(href="#", class="link flex-title") Ежедневник датированный 2018
+                    div(class="flex-text") Термин Big Data существует более 10 лет. Но всего 15% компаний умеют использовать большие данные для получения финансовой выгоды.
+                    div(class="flex-price") 660.– 
+                    
+                div(class="flex-item")
+                    a(href="#", class="link flex-holder")
+                        img(src="../dummy/shop6.png", class="flex-img")
+                    div(class="flex-tags-container")
+                        a(href="category.html", class="link link-pink link-pink--bottom-reverse flex-category") одежда
+                        a(href="brand.html", class="link link-black--bottom-reverse flex-brand") InFolio
+                    div(class="flex-title-container")
+                        a(href="#", class="link flex-title") Ежедневник датированный 2018
+                    div(class="flex-text") Термин Big Data существует более 10 лет. Но всего 15% компаний умеют использовать большие данные для получения финансовой выгоды.
+                    div(class="flex-price") 390.– 
+                    
+            div(class="load")
+                a(href="catalog-load.html", data-container="#catalog", data-itemsselector=".flex-item", class="link load-container")
+                    div(class="load-more")
+                    div(class="load-text") Показать еще товары

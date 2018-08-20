@@ -1,0 +1,97 @@
+extends ../templates/base
+
+block content
+    div(class="page-inner page-inner--w1")
+        div(class="catalog")
+            div(class="catalog-breadcrumbs")
+                a(href="catalog.html", class="link link-black--bottom catalog-breadcrumbs-item") Каталог
+                a(href="brands.html", class="link link-black--bottom catalog-breadcrumbs-item") Одежда
+                a(href="brands.html", class="link link-black--bottom catalog-breadcrumbs-item") ANTW x SNC 
+                div(class="link catalog-breadcrumbs-item") Свитшот Barrymore 
+                
+            div(class="catalog-card")
+                div(class="catalog-card-item catalog-card-item--65")
+                    div(class="catalog-slider")
+                        div(class="catalog-holder-image")
+                            img(src="../dummy/bcg.png")
+                        
+                            div(class="catalog-text-image") Как увеличить прибыль с помощью Big Data
+                    
+                    div(class="catalog-reviews")
+                        div(class="catalog-reviews-title") Отзывы от товаре
+                        
+                        div(id="reviews", class="catalog-reviews-list")
+                            div(class="catalog-reviews-item")
+                                div(class="catalog-reviews-container")
+                                    div(class="catalog-reviews-name") Елена
+                                    div(class="catalog-reviews-text") Очень рада покупке, кожа очень мягкая, качество отличное! Ремень достаточно длинный, одно отделение, есть кармашки. Удобная и приятная, советую!
+                                    div(class="catalog-reviews-date") 6 апреля 2018
+                        
+                    div(class="catalog-reviews-auth")
+                        div(class="catalog-reviews-auth-text") Чтобы оставить свой отзыв, нужно авторизоваться
+                        button(type="submit", class="button button--border-black catalog-reviews-auth-button") Войти
+                            
+                div(class="catalog-card-item catalog-card-item--30")
+                    div(class="catalog-item-info")
+                        div(class="page-text")
+                            a(href="#", class="link link-black--bottom-reverse catalog-item-section") FORBES
+                            div(class="catalog-item-name") Конференция «Как увеличить прибыль с помощью BIG DATA»
+                            div(class="catalog-item-price") 23 900.–
+                            div(class="catalog-item-text") Термин Big Data существует более 10 лет. Но всего 15% компаний умеют использовать большие данные для получения финансовой выгоды.
+                            p
+                                a(href="#", class="link link-black link-black--bottom") Подробнее о конференции
+                            form(class="form catalog-form")
+                                div(class="form-row")
+                                    select(class="form-select form-select--darkgray change-rate", placeholder="Тариф:")
+                                        option(id="#STANDARD") STANDARD
+                                        option(id="#PREMIUM") PREMIUM
+                                        option(id="#SUPERPREMIUM") SUPERPREMIUM
+                                div(class="form-row show-rate")
+                                    a(href="#", class="link link-black link-black--bottom") Описание тарифа
+                                div(class="form-row catalog-form-order")
+                                    input(type="text", id="name", name="name", placeholder="1", class="form-item form-item--text form-catalog-order-number")
+                                    button(type="submit", class="button button--black button-color--pink form-catalog-order-submit") Купить
+                                    button(type="button", class="button form-catalog-order-favorite")
+                                        include ../../prod/svg/favorite.svg
+            
+            div(class="catalog-about")
+                div(class="page-text center")
+                    h2 Потому что ты и есть тренд
+                    h3 ANTW — бренд, основанный выпускницей Istituto Marangoni Мариам Чумбуридзе. Дизайнер стремится привнести настоящие западные понятия и эстетику в модную индустрию Москвы — донести настоящий уровень качества и стиля. Мариам делает акцент на качестве материала и пошива.
+            
+            div(class="catalog-photos")
+                div(class="catalog-photos-item catalog-photos-item--w50")
+                    div(class="catalog-photos-holder")
+                        img(src="../dummy/model1.png", alt="")
+                div(class="catalog-photos-item catalog-photos-item--w50")
+                    div(class="catalog-photos-info") Известная модель и блогер Маша Миногарова первой в Москве смогла примерить на себя свитшот из коллекции ANTWхSNC. Теперь такая возможность есть у тебя.
+                    div(class="catalog-photos-holder")
+                        img(src="../dummy/model2.png", alt="")
+                
+    div(class="page-inner page-inner--w1")
+        div(class="catalog-similar")
+            div(class="title") С этим товаром обычно покупают
+            div(class="flex-list flex-list--3")
+                div(class="flex-item")
+                    a(href="#", class="link flex-holder")
+                        img(src="../dummy/shop10.png", class="flex-img")
+                    div(class="flex-title-container")
+                        a(href="#", class="link flex-title") Свитшот Barrymore
+                    div(class="flex-price") 4 799.–  
+                    
+                div(class="flex-item")
+                    a(href="#", class="link flex-holder")
+                        img(src="../dummy/shop5.png", class="flex-img")
+                    div(class="flex-title-container")
+                        a(href="#", class="link flex-title") Свитшот Owens
+                    div(class="flex-price") 5 200.– 
+                    
+                div(class="flex-item")
+                    a(href="#", class="link flex-holder")
+                        img(src="../dummy/shop10.png", class="flex-img")
+                    div(class="flex-title-container")
+                        a(href="#", class="link flex-title") Свитшот Barrymore
+                    div(class="flex-price") 4 799.– 
+                    
+
+        

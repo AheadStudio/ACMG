@@ -1,0 +1,135 @@
+extends ../templates/base
+
+block content
+    div(class="page-inner page-inner--w1")
+        div(class="catalog")
+            div(class="catalog-breadcrumbs")
+                a(href="catalog.html", class="link link-black--bottom catalog-breadcrumbs-item") Каталог
+                a(href="brands.html", class="link link-black--bottom catalog-breadcrumbs-item") Одежда
+                a(href="brands.html", class="link link-black--bottom catalog-breadcrumbs-item") ANTW x SNC 
+                div(class="link catalog-breadcrumbs-item") Свитшот Barrymore 
+                
+            div(class="catalog-card")
+                div(class="catalog-card-item catalog-card-item--65")
+                    div(class="catalog-slider slider")
+                        div(class="slider-sale") Sale
+                        div(class="slider-list")
+                            div(class="slider-item")
+                                img(src="../dummy/shop1.png", class="slider-img")
+                            div(class="slider-item")
+                                img(src="../dummy/shop1.png", class="slider-img")
+                            div(class="slider-item")
+                                img(src="../dummy/shop1.png", class="slider-img")
+                            div(class="slider-item")
+                                img(src="../dummy/shop1.png", class="slider-img")
+                            div(class="slider-item")
+                                img(src="../dummy/shop1.png", class="slider-img")
+                            div(class="slider-item")
+                                img(src="../dummy/shop1.png", class="slider-img")
+                            div(class="slider-item")
+                                img(src="../dummy/shop1.png", class="slider-img")
+                        div(class="slider-arrow-container")
+                    
+                    div(class="catalog-reviews")
+                        div(class="catalog-reviews-title") Отзывы от товаре
+                        
+                        div(id="reviews", class="catalog-reviews-list")
+                            div(class="catalog-reviews-item")
+                                div(class="catalog-reviews-container")
+                                    div(class="catalog-reviews-name") Елена
+                                    div(class="catalog-reviews-text") Очень рада покупке, кожа очень мягкая, качество отличное! Ремень достаточно длинный, одно отделение, есть кармашки. Удобная и приятная, советую!
+                                    div(class="catalog-reviews-date") 6 апреля 2018
+                                
+                        div(class="load")
+                            a(href="reviews-load.html", data-container="#reviews", data-itemsselector=".catalog-reviews-item", class="link load-container")
+                                div(class="load-more")
+                        
+                    div(class="catalog-reviews-auth")
+                        div(class="catalog-reviews-auth-text") Чтобы оставить свой отзыв, нужно авторизоваться
+                        button(type="submit", class="button button--border-black catalog-reviews-auth-button") Войти
+                            
+                div(class="catalog-card-item catalog-card-item--30")
+                    div(class="catalog-item-info")
+                        div(class="page-text")
+                            a(href="#", class="link link-black--bottom-reverse catalog-item-section") ANTW x SNC 
+                            div(class="catalog-item-name") Свитшот Barrymore
+                            div(class="catalog-item-price") 4 799.– 
+                            div(class="catalog-item-oldprice") 5600.– 
+                            div(class="catalog-item-text") Сделай свою уникальную вышивку. Выбери цвет свитшот. Выбери один из трех вариантов расположения вышивки и ее цвет. Напиши свое имя рядом с брендом SNC. 
+                            div(class="catalog-item-composition") 
+                                dl
+                                    dt Состав:
+                                    dd 70% хлопок, 30% полиэстер Машинная вышивка
+                            form(class="form catalog-form")
+                                div(class="form-row")
+                                    div(class="catalog-form-property")
+                                        div(class="catalog-form-property-name") Размер:
+                                        div(class="catalog-form-property-list")
+                                            input(type="radio", name="size", class="form-item", data-jcf-class="form-item--radio-catalog", data-jcf-span-text="S")
+                                            input(type="radio", name="size", class="form-item", data-jcf-class="form-item--radio-catalog", data-jcf-span-text="M")
+                                            input(type="radio", name="size", class="form-item", data-jcf-class="form-item--radio-catalog", data-jcf-span-text="L")
+                                div(class="form-row")
+                                    div(class="catalog-form-property")
+                                        div(class="catalog-form-property-name") Цвет:
+                                        div(class="catalog-form-property-list")
+                                            input(type="radio", name="color", class="form-item", data-jcf-class="form-item--radio-catalog", data-jcf-span-color="#39322a")
+                                            input(type="radio", name="color", class="form-item", data-jcf-class="form-item--radio-catalog", data-jcf-span-color="#3e3e50")
+
+                                div(class="form-row")
+                                    div(class="catalog-form-property")
+                                        div(class="catalog-form-property-name") Вышивка:
+                                        div(class="catalog-form-property-list")
+                                            input(type="radio", name="embroidery", class="form-item", data-jcf-class="form-item--radio-catalog", data-jcf-span-color="#f8f6f2")
+                                            input(type="radio", name="embroidery", class="form-item", data-jcf-class="form-item--radio-catalog", data-jcf-span-color="#ff161f")
+                                            input(type="radio", name="embroidery", class="form-item", data-jcf-class="form-item--radio-catalog", data-jcf-span-color="#ff70ad")
+                                            input(type="radio", name="embroidery", class="form-item", data-jcf-class="form-item--radio-catalog", data-jcf-span-color="#51ced2")
+                                            input(type="radio", name="embroidery", class="form-item", data-jcf-class="form-item--radio-catalog", data-jcf-span-color="#fbea0d")
+                                            input(type="radio", name="embroidery", class="form-item", data-jcf-class="form-item--radio-catalog", data-jcf-span-color="#4a4a4a")
+
+                                div(class="form-row catalog-form-order")
+                                    input(type="text", id="name", name="name", placeholder="1", class="form-item form-item--text form-catalog-order-number")
+                                    button(type="submit", class="button button--black button-color--pink form-catalog-order-submit") Купить
+                                    button(type="button", class="button form-catalog-order-favorite")
+                                        include ../../prod/svg/favorite.svg
+            
+            div(class="catalog-about")
+                div(class="page-text center")
+                    h2 Потому что ты и есть тренд
+                    h3 ANTW — бренд, основанный выпускницей Istituto Marangoni Мариам Чумбуридзе. Дизайнер стремится привнести настоящие западные понятия и эстетику в модную индустрию Москвы — донести настоящий уровень качества и стиля. Мариам делает акцент на качестве материала и пошива.
+            
+            div(class="catalog-photos")
+                div(class="catalog-photos-item catalog-photos-item--w50")
+                    div(class="catalog-photos-holder")
+                        img(src="../dummy/model1.png", alt="")
+                div(class="catalog-photos-item catalog-photos-item--w50")
+                    div(class="catalog-photos-info") Известная модель и блогер Маша Миногарова первой в Москве смогла примерить на себя свитшот из коллекции ANTWхSNC. Теперь такая возможность есть у тебя.
+                    div(class="catalog-photos-holder")
+                        img(src="../dummy/model2.png", alt="")
+                
+    div(class="page-inner page-inner--w1")
+        div(class="catalog-similar")
+            div(class="title") Другие модели бренда
+            div(class="flex-list flex-list--3")
+                div(class="flex-item")
+                    a(href="#", class="link flex-holder")
+                        img(src="../dummy/shop10.png", class="flex-img")
+                    div(class="flex-title-container")
+                        a(href="#", class="link flex-title") Свитшот Barrymore
+                    div(class="flex-price") 4 799.–  
+                    
+                div(class="flex-item")
+                    a(href="#", class="link flex-holder")
+                        img(src="../dummy/shop5.png", class="flex-img")
+                    div(class="flex-title-container")
+                        a(href="#", class="link flex-title") Свитшот Owens
+                    div(class="flex-price") 5 200.– 
+                    
+                div(class="flex-item")
+                    a(href="#", class="link flex-holder")
+                        img(src="../dummy/shop10.png", class="flex-img")
+                    div(class="flex-title-container")
+                        a(href="#", class="link flex-title") Свитшот Barrymore
+                    div(class="flex-price") 4 799.– 
+                    
+
+        

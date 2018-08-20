@@ -1,0 +1,23 @@
+extends ../templates/base
+
+block content
+    div(class="page-inner page-inner--w1")
+        div(class="catalog")
+            div(class="catalog-reviews")
+                div(class="catalog-reviews-title") Отзывы от товаре
+                div(id="reviews", class="catalog-reviews-list")
+                    div(class="catalog-reviews-item")
+                        div(class="catalog-reviews-container")
+                            div(class="catalog-reviews-name") Елена
+                            div(class="catalog-reviews-text") Очень рада покупке, кожа очень мягкая, качество отличное! Ремень достаточно длинный, одно отделение, есть кармашки. Удобная и приятная, советую!
+                            div(class="catalog-reviews-date") 6 апреля 2018
+                    
+                    div(class="catalog-reviews-item")
+                        div(class="catalog-reviews-container")
+                            div(class="catalog-reviews-name") Клава
+                            div(class="catalog-reviews-text") Что говорить то? Классная!
+                            div(class="catalog-reviews-date") 10 апреля 2018
+                        
+                div(class="load")
+                    a(href="reviews-load.html", data-container="#reviews", data-itemsselector=".catalog-reviews-item", class="link load-container")
+                        div(class="load-more")

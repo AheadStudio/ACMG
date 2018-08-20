@@ -1,0 +1,90 @@
+extends ../templates/base
+
+block content
+    div(class="page-inner page-inner--w1")
+        div(class="catalog")
+            div(class="catalog-breadcrumbs")
+                a(href="catalog.html", class="link link-black--bottom catalog-breadcrumbs-item") Каталог
+                a(href="brands.html", class="link link-black--bottom catalog-breadcrumbs-item") Аксессуары 
+                div(class="link catalog-breadcrumbs-item") bratislava
+                
+            div(class="catalog-card")
+                div(class="catalog-card-item catalog-card-item--65")
+                    div(class="catalog-slider")
+                        div(class="catalog-holder-image")
+                            img(src="../dummy/magazine.png", class="catalog-image--w40")
+                                                    
+                    div(class="catalog-reviews")
+                        div(class="catalog-reviews-title") Отзывы от товаре
+                        
+                        div(id="reviews", class="catalog-reviews-list")
+                            div(class="catalog-reviews-item")
+                                div(class="catalog-reviews-container")
+                                    div(class="catalog-reviews-name") Елена
+                                    div(class="catalog-reviews-text") Очень рада покупке, кожа очень мягкая, качество отличное! Ремень достаточно длинный, одно отделение, есть кармашки. Удобная и приятная, советую!
+                                    div(class="catalog-reviews-date") 6 апреля 2018
+                        
+                    div(class="catalog-reviews-auth")
+                        div(class="catalog-reviews-auth-text") Чтобы оставить свой отзыв, нужно авторизоваться
+                        button(type="submit", class="button button--border-black catalog-reviews-auth-button") Войти
+                            
+                div(class="catalog-card-item catalog-card-item--30")
+                    div(class="catalog-item-info")
+                        div(class="page-text")
+                            a(href="#", class="link link-black--bottom-reverse catalog-item-section") Forbes
+                            div(class="catalog-item-name") Подписка на Forbes
+                            div(class="catalog-item-price") 4 200.– 
+                            div(class="catalog-item-text") Самый влиятельный независимый деловой проект в мире. Forbes пишет об историях успеха и поражений предпринимателей, новых идеях для бизнеса и инвестиций, а также публикует авторитетные рейтинги.
+                            form(class="form catalog-form")
+                                div(class="form-row")
+                                    select(class="form-select form-select--darkgray change-rate", placeholder="Особенности:")
+                                        option дизайн 1
+                                        option дизайн 2
+                                        option дизайн 3
+                                div(class="form-row")
+                                    select(class="form-select form-select--darkgray change-rate", placeholder="Период:")
+                                        option на 6 месяцев
+                                        option на 1 год
+                                        
+                                div(class="form-row catalog-form-order")
+                                    input(type="text", id="name", name="name", placeholder="1", class="form-item form-item--text form-catalog-order-number")
+                                    button(type="submit", class="button button--black button-color--pink form-catalog-order-submit") Купить
+                                    button(type="button", class="button form-catalog-order-favorite")
+                                        include ../../prod/svg/favorite.svg
+                
+    div(class="page-inner page-inner--w1")
+        div(class="catalog-similar")
+            div(class="title") С этим товаром обычно покупают
+            div(class="flex-list flex-list--3")
+                div(class="flex-item")
+                    a(href="#", class="link flex-holder")
+                        img(src="../dummy/magazine.png", class="flex-img")
+                    div(class="flex-tags-container")
+                        a(href="category.html", class="link link-pink link-pink--bottom-reverse flex-category") журналы
+                        a(href="brand.html", class="link link-black--bottom-reverse flex-brand") Forbes 
+                    div(class="flex-title-container")
+                        a(href="#", class="link flex-title") Подписка на 12 месяцев 
+                    div(class="flex-text") Самый влиятельный независимый деловой проект в мире. Forbes пишет об историях успеха и поражений предпринимателей, новых идеях для бизнеса и инвестиций, а также публикует авторитетные рейтинги.
+                    div(class="flex-price") 4 200.– 
+                
+                div(class="flex-item")
+                    a(href="#", class="link flex-holder")
+                        img(src="../dummy/magazine2.png", class="flex-img")
+                    div(class="flex-tags-container")
+                        a(href="category.html", class="link link-pink link-pink--bottom-reverse flex-category") журналы
+                        a(href="brand.html", class="link link-black--bottom-reverse flex-brand") Forbes 
+                    div(class="flex-title-container")
+                        a(href="#", class="link flex-title") Подписка на 6 месяцев 
+                    div(class="flex-text") Самый влиятельный независимый деловой проект в мире. Forbes пишет об историях успеха и поражений предпринимателей, новых идеях для бизнеса и инвестиций, а также публикует авторитетные рейтинги.
+                    div(class="flex-price") 2 100.– 
+                    
+                div(class="flex-item")
+                    a(href="#", class="link flex-holder")
+                        img(src="../dummy/magazine.png", class="flex-img")
+                    div(class="flex-tags-container")
+                        a(href="category.html", class="link link-pink link-pink--bottom-reverse flex-category") журналы
+                        a(href="brand.html", class="link link-black--bottom-reverse flex-brand") Forbes 
+                    div(class="flex-title-container")
+                        a(href="#", class="link flex-title") Подписка на 12 месяцев 
+                    div(class="flex-text") Самый влиятельный независимый деловой проект в мире. Forbes пишет об историях успеха и поражений предпринимателей, новых идеях для бизнеса и инвестиций, а также публикует авторитетные рейтинги.
+                    div(class="flex-price") 4 200.– 

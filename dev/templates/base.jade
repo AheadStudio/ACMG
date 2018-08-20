@@ -1,0 +1,254 @@
+include ../lib/html/html.jade
+doctype html
+<!--[if IE 7]><html lang="ru" prefix="og: http://ogp.me/ns#" class="ie8 no-js"><![endif]-->
+<!--[if IE 8]><html lang="ru" prefix="og: http://ogp.me/ns#" class="ie8 no-js"><![endif]-->
+<!--[if IE 9]><html lang="ru" prefix="og: http://ogp.me/ns#" class="ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+html(lang="ru", class="no-js", prefix="og:http://ogp.me/ns#")
+	<!--<![endif]-->
+	head
+		+headerMeta({
+			charset: "utf-8",
+			keywords: info.keywords,
+			description: info.description,
+			title: info.title,
+			robots: "index, follow",
+			viewport: "width=device-width, initial-scale=1.0"
+		})
+		+openGraph({
+			type: "website",
+			siteName: info.siteName,
+			title: info.title,
+			description: info.description,
+			url: info.productionUrl,
+			image: info.image
+		})
+		+webIcons({
+			favicon: {
+				src: "/i/favicon.ico"
+			},
+			appleTouchIcon: [
+				{
+					src: "../i/icons/apple-touch-icon.jpg"
+				}, {
+					src: "../i/icons/apple-touch-icon-76.jpg",
+					size: "76x76"
+				}, {
+					src: "../i/icons/apple-touch-icon-140.jpg",	
+					size: "140x140"
+				}, {
+					src: "../i/icons/apple-touch-icon-152.jpg",
+					size: "152x152"
+				}
+			]
+		})
+		+addCSS([
+			{
+				media: "screen",
+				href: "../css/plugins/slick.css",
+				noCache: true
+			}, {
+				media: "screen",
+				href: "../css/plugins/magnific-popup.css",
+				noCache: true,
+			}, {
+				media: "screen",
+				href: "../css/plugins/tooltipster.bundle.min.css",
+				noCache: true,
+			}, {
+				media: "screen",
+				href: "../css/" + info.code + ".css",
+				noCache: true
+			}
+		])
+
+	body(itemscope, itemtype="http://schema.org/WebPage")
+
+		div(class="page")
+			header(class="page-header", itemscope, itemtype="http://schema.org/WPHeader")
+				div(class="header-coll")
+					+menu({
+						rootClass: "header-menu",
+						items: [
+							{
+								name: "Каталог",
+								href: "catalog.html",
+								linkClass: page.code == "catalog" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
+								title: "",
+							}, {
+								name: "Бренды",
+								href: "brands.html",
+								linkClass: page.code == "brands" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
+								title: "",
+							}, {
+								name: "Доставка",
+								href: "delivery.html",
+								linkClass: page.code == "delivery" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
+								title: "",
+							}, {
+								name: "О проекте",
+								href: "about.html",
+								linkClass:  page.code == "about" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
+								title: "",
+							}, {
+								name: "Контакты",
+								href: "contacts.html",
+								linkClass:  page.code == "contacts" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
+								title: "",
+							}
+						]
+					})
+				div(class="header-coll")
+					if page.code == "home"
+						div(class="header-logo")
+							include ../../prod/svg/logo.svg
+					else
+						a(href="home.html", class="header-logo")
+							include ../../prod/svg/logo.svg
+					
+				div(class="header-coll")
+					div(class="header-userbar")
+						a(href="#user-menu" class="header-userbar-link header-userpanel")
+							span(class="header-userbar-name header-userbar-name--mail") serginacakes@gmail.com
+							div(class="header-userbar-icon")
+								include ../../prod/svg/user.svg
+						a(href="favorite.html" class="header-userbar-link")
+							span(class="header-userbar-name") Избранное
+							div(class="header-userbar-icon")
+								include ../../prod/svg/favorite.svg
+							span(class="header-userbar-count") 12
+						a(href="basket.html" class="header-userbar-link header-basket")
+							span(class="header-userbar-name") Корзина
+							div(class="header-userbar-icon")
+								include ../../prod/svg/box.svg
+							span(class="header-userbar-count") 0
+							
+			main(class="page-content")
+				block content
+		
+		
+			div(class="page-userpanel-container")
+				div(id="page-basket", class="page-userpanel")
+					div(class="page-userpanel-title") serginacakes@gmail.com
+					div(class="page-userpanel-menu")
+						div(class="page-userpanel-menu-item")
+							a(href="profile.html", class="link link-black link-black--bottom-reverse") Профиль
+						div(class="page-userpanel-menu-item")
+							a(href="profile.html", class="link link-black link-black--bottom-reverse") Заказы
+						div(class="page-userpanel-menu-item")
+							a(href="profile.html", class="link link-black link-black--bottom-reverse") Избранное
+						div(class="page-userpanel-menu-item")
+							a(href="profile.html", class="link link-black link-black--bottom-reverse") Бонусная карта
+							
+					a(href="#", class="link link-black link-black--bottom page-userpanel-close") Выйти
+		
+		
+			div(class="page-basket-container")
+				div(id="page-basket", class="page-basket")
+					div(class="page-basket-title") Вы добавили в корзину
+					div(class="page-basket-addons")
+						div(class="page-basket-item")
+							div(class="page-basket-holder")
+								img(src="../dummy/shop13.jpg", alt="")
+									
+							div(class="page-basket-info")
+								div(class="page-text")
+									div(class="page-basket-name") Pocket Square Flag Green
+									dl
+										dt Размер:
+										dd L
+										dt Цвет:
+										dd Серый
+					a(href="basket.html", class="link button button--black button-color--pink") Перейти в корзину
+					div(class="center")
+						a(href="#", class="link link-black link-black--bottom page-basket-close") Закрыть
+						
+						
+			div(class="select-rate-container")
+				div(id="STANDARD", class="select-rate")
+					div(class="select-rate-name") Тариф STANDARD
+					div(class="page-text")
+						ul
+							li Подписка на онлайн-версию журнала Forbes (1 месяц)
+							li Фотоотчеты с мероприятия
+						
+				div(id="PREMIUM", class="select-rate")
+					div(class="select-rate-name") Тариф Premium
+					div(class="page-text")
+						ul
+							li Подписка на онлайн-версию журнала Forbes (1 месяц)
+							li Фотоотчеты с мероприятия
+							li Фотоотчеты с мероприятия
+							li Кофе-брейк
+							li Видеозаписи выступлений
+							li After party
+							li VIP lounge
+							li Круглый стол с миллиардерами и инвесторами*
+		
+		footer(class="page-footer", itemscope, itemtype="http://schema.org/WPFooter")
+			div(class="footer-row")
+				div(class="footer-contacts")
+					div(class="footer-contacts-logo")
+						include ../../prod/svg/logo.svg
+					div(class="footer-contacts-list")
+						div(class="footer-contacts-item")
+							a(href="tel:+79254996908", class="link link-white footer-contacts-mobile link-color--pink") +7 (925) 499-63-08
+						div(class="footer-contacts-item")
+							a(href="mailto:info@acmg.store", class="link link-white footer-link footer-contacts-mail") info@acmg.store
+						
+				div(class="footer-dispatch")
+					form(method="post", class="form form-footer")
+						div(class="form-text") Подпишитесь на наши рассылку
+						div(class="form-row form-row--w1")
+							div(class="form-holder form-holder--inside")
+								input(type="text", id="name", name="name", required, data-error="Ваш е-мейл", aria-required="true", placeholder="Укажите ваш е-мейл" class="form-item form-item--text")
+								button(type="submit", class="button button--black button-color--pink") Подписаться
+									
+								
+			div(class="footer-row")
+				div(class="footer-privacy")
+					span(class="footer-privacy-name") &#169; ACMG Store, 2018. 
+					a(href="#", class="link link-white footer-link" target="_blank") Политика конфиденциальности
+				div(class="footer-cards")
+					div(class="footer-cards-item")
+						img(src="../dummy/visa.png", class="footer-cards-item-img")
+					div(class="footer-cards-item")
+						img(src="../dummy/mastercard.png", class="footer-cards-item-img")
+					div(class="footer-cards-item")
+						img(src="../dummy/maestro.png", class="footer-cards-item-img")
+				div(class="footer-social")
+					div(class="footer-social-item")
+						a(href="#", class="link link-white footer-link", target="_blank") Facebook
+					div(class="footer-social-item") 
+						a(href="#", class="link link-white footer-link", target="_blank") Instagram
+				div(class="footer-creators")
+					a(href="#", class="link link-white footer-creators-link", target="_blank") 
+						span Сделано&nbsp;
+						span(class="footer-creators-name") Create Future
+		+addJS([
+			{
+				src: "../js/jquery-3.2.1.min.js"
+			}, {
+				src: "../js/plugins/jcf.js"
+			}, {
+				src: "../js/plugins/jcf.checkbox.js"
+			}, {
+				src: "../js/plugins/jcf.radio.js"
+			}, {
+				src: "../js/plugins/jcf.select.js"
+			}, {
+				src: "../js/plugins/jquery.validate.min.js"
+			}, {
+				src: "../js/plugins/jquery.mask.min.js"
+			}, {
+				src: "../js/plugins/slick.min.js"
+			}, {
+				src: "../js/plugins/jquery.magnific-popup.min.js"
+			}, {
+				src: "../js/plugins/slick.min.js"
+			}, {
+				src: "../js/plugins/tooltipster.bundle.min.js"
+			}, {
+				src: "../js/" + info.code + ".js"
+			}
+		])

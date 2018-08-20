@@ -1,0 +1,40 @@
+extends ../templates/base
+
+block content
+    div(class="page-inner page-inner--w2")
+        div(class="page-text")
+            div(class="contacts")
+                div(class="page-title center")
+                    h1 Контакты 
+                div(class="center")
+                    p Мы здесь, чтобы помочь вам! 
+                    p Отправьте нам электронное письмо, позвоните или воспользуйтесь формой ниже, чтобы связаться с нами. 
+                    p Часы работы: 10:00 – 18:00
+                    p
+                        a(href="mailto:info@acmg.store", class="link link-black--bottom-reverse") info@acmg.store
+                    p
+                        a(href="tel:+79254996908", class="link link-color--pink") +7 (925) 499-63-08
+                div(class="contacts-form")
+                    form(class="form")
+                        div(class="form-row form-row--w1")
+                            div(class="form-holder")
+                                label(for="name", class="form-label")
+                                    span(class="form-label-text") Имя
+                                input(type="text", id="name", name="name", required, data-error="Ваше имя", aria-required="true", placeholder="Имя", class="form-item form-item--text")
+                        div(class="form-row form-row--w2")
+                            div(class="form-holder")
+                                label(for="mobile", class="form-label")
+                                    span(class="form-label-text") Телефон
+                                input(type="text", id="mobile", name="mobile", required, data-error="Ваш телефон", aria-required="true", placeholder="Телефон", data-pattern="mobileRU", data-number="+7 (000) 000-00-00", class="form-item form-item--text", maxlength="18")
+                            div(class="form-holder")
+                                label(for="email", class="form-label")
+                                    span(class="form-label-text") Email
+                                input(type="email", id="email", name="email", required, data-error="Ваш email", aria-required="true", placeholder="Email", class="form-item form-item--text")
+                        div(class="form-row form-row--w1")
+                            div(class="form-holder")
+                                label(for="message ", class="form-label")
+                                    span(class="form-label-text") Сообщение
+                                textarea(id="message ", rows="10", placeholder="Сообщение", class="form-item form-item--textarea")
+                        div(class="form-row form-row--w1")
+                            button(type="submit", class="button button--black button-color--pink") Отправить
+    
