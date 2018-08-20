@@ -65,7 +65,7 @@ html(lang="ru", class="no-js", prefix="og:http://ogp.me/ns#")
 	body(itemscope, itemtype="http://schema.org/WebPage")
 
 		div(class="page")
-			if page.code !== "order"
+			if page.code !== "order" && page.code !== "order-result"
 				header(class="page-header", itemscope, itemtype="http://schema.org/WPHeader")
 					div(class="header-coll")
 						+menu({
@@ -133,7 +133,7 @@ html(lang="ru", class="no-js", prefix="og:http://ogp.me/ns#")
 		
 		
 			div(class="page-userpanel-container")
-				div(id="page-basket", class="page-userpanel")
+				div(id="page-userpanel", class="page-userpanel")
 					div(class="page-userpanel-title") serginacakes@gmail.com
 					div(class="page-userpanel-menu")
 						div(class="page-userpanel-menu-item")
@@ -189,7 +189,7 @@ html(lang="ru", class="no-js", prefix="og:http://ogp.me/ns#")
 							li After party
 							li VIP lounge
 							li Круглый стол с миллиардерами и инвесторами*
-		if page.code !== "order"
+		if page.code !== "order" && page.code !== "order-result"
 			footer(class="page-footer", itemscope, itemtype="http://schema.org/WPFooter")
 				div(class="footer-row")
 					div(class="footer-contacts")
@@ -230,7 +230,11 @@ html(lang="ru", class="no-js", prefix="og:http://ogp.me/ns#")
 						a(href="#", class="link link-white footer-creators-link", target="_blank") 
 							span Сделано&nbsp;
 							span(class="footer-creators-name") Create Future
-		
+		else
+			footer(class="page-footer-order", itemscope, itemtype="http://schema.org/WPFooter")
+				div(class="page-footer-order-text") © ACMG Store, 2018. 
+				a(href="#", class="link link-black link-black--bottom") Политика конфиденциальности
+				
 		+addJS([
 			{
 				src: "../js/jquery-3.2.1.min.js"
@@ -254,6 +258,8 @@ html(lang="ru", class="no-js", prefix="og:http://ogp.me/ns#")
 				src: "../js/plugins/jquery.magnific-popup.min.js"
 			}, {
 				src: "../js/plugins/slick.min.js"
+			}, {
+				src: "../js/plugins/sticky-kit.js"
 			}, {
 				src: "../js/plugins/tooltipster.bundle.min.js"
 			}, {

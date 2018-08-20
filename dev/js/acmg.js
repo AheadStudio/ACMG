@@ -374,6 +374,7 @@
 						self.showTooltipRate();
 						self.busketNumber();
 						self.busketremoveItem();
+						self.stickyBlock();
 					},
 
 					basket: function() {
@@ -432,7 +433,7 @@
 						$(".header-userpanel").on("click", function(e) {
 							e.preventDefault();
 							$.magnificPopup.close();
-							$(".header-basket", $sel.body).tooltipster("open");
+							$(".header-userpanel", $sel.body).tooltipster("open");
 						});
 					},
 
@@ -514,6 +515,28 @@
 							}, 300);
 						})
 					},
+
+					stickyBlock: function() {
+						var self = this,
+							$stickyBlocks = $("[data-sticky]");
+
+						$stickyBlocks.each(function() {
+							var $el = $(this),
+								offsetTop = $el.data("stickyOffsetTop"),
+								$container = $el.parent();
+
+							if (!offsetTop) {
+								offsetTop = 0;
+							}
+
+							$el.stick_in_parent({
+								container: $container,
+								offset_top: offsetTop
+							});
+
+						});
+
+					}
 
 				},
 

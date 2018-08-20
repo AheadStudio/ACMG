@@ -95,6 +95,14 @@
                 "mobile": "0"
             }
         },
+        "order-result": {
+            "name": "Оформление заказа результат",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        },
         "basket": {
             "name": "Карзина",
             "progress": {
@@ -147,6 +155,22 @@
         },
         "contacts": {
             "name": "Контакты",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        },
+        "account-profile": {
+            "name": "ЛК: Профиль",
+            "progress": {
+                "desktop": "100",
+                "tablet": "0",
+                "mobile": "0"
+            }
+        },
+        "account-history": {
+            "name": "ЛК: Истории",
             "progress": {
                 "desktop": "100",
                 "tablet": "0",

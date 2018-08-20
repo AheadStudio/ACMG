@@ -1,0 +1,71 @@
+extends ../templates/base
+
+block content
+    div(class="page-inner page-inner--w1")
+        div(class="account")
+            div(class="page-title center")
+                div(class="page-text")
+                    h1 Личный кабинет
+                    
+            div(class="account-container")
+                div(class="account-menu-container")
+                    div(class="account-menu")
+                        div(class="account-info")
+                            div(class="account-avatar")
+                                include ../../prod/svg/user-black.svg
+                            div(class="account-mail") serginacakes@gmail.com
+                        div(class="account-menu-list")    
+                            div(class="account-menu-item")
+                                a(href="profile.html", class="link link-black link-black--bottom-reverse account-menu-item-link") Профиль
+                            div(class="account-menu-item")
+                                a(href="orders.html", class="link link-black link-black--bottom-reverse account-menu-item-link") Заказы
+                            div(class="account-menu-item")
+                                a(href="favorite.html", class="link link-black link-black--bottom-reverse account-menu-item-link") Избранное
+                            div(class="account-menu-item")
+                                a(href="bonus.html", class="link link-black link-black--bottom-reverse account-menu-item-link") Бонусная карта
+                        a(href="#", class="link link-black link-black--bottom account-menu-logout") Выйти
+                    
+                div(class="account-panel")
+                    div(class="account-panel-name") Профиль
+                    form(class="form")
+                        div(class="form-row form-row--w1")
+                            div(class="form-holder")
+                                label(for="name", class="form-label")
+                                    span(class="form-label-text") Полное Имя
+                                input(type="text", id="name", name="name", required, data-error="Ваше имя", aria-required="true", placeholder="Имя", class="form-item form-item--text")
+                        div(class="form-row form-row--w1")
+                            div(class="form-holder")
+                                label(for="email", class="form-label")
+                                    span(class="form-label-text") Email
+                                input(type="email", id="email", name="email", required, data-error="Ваш email", aria-required="true", placeholder="Email", class="form-item form-item--text")
+                        div(class="form-row form-row--w1")
+                            div(class="form-holder")
+                                label(for="mobile", class="form-label")
+                                    span(class="form-label-text") Телефон
+                                input(type="text", id="mobile", name="mobile", required, data-error="Ваш телефон", aria-required="true", placeholder="Телефон", data-pattern="mobileRU", data-number="+7 (000) 000-00-00", class="form-item form-item--text", maxlength="18")
+                        div(class="form-row form-row--w1")
+                            div(class="form-holder")
+                                label(for="city", class="form-label")
+                                    span(class="form-label-text") Город
+                                input(type="text", id="city", name="city", placeholder="Город", class="form-item form-item--text")
+                        div(class="form-row form-row--w1")
+                            div(class="form-holder")
+                                label(for="street", class="form-label")
+                                    span(class="form-label-text") Улица
+                                input(type="text", id="street", name="street", placeholder="Улица", class="form-item form-item--text")
+                        div(class="form-row form-row--w3")
+                            div(class="form-holder")
+                                label(for="house", class="form-label")
+                                    span(class="form-label-text") Дом
+                                input(type="text", id="house", name="house", placeholder="Дом", class="form-item form-item--text")
+                            div(class="form-holder")
+                                label(for="section", class="form-label")
+                                    span(class="form-label-text") Корпус
+                                input(type="text", id="section", name="section", placeholder="Улица", class="form-item form-item--text")
+                            div(class="form-holder")
+                                label(for="apartment", class="form-label")
+                                    span(class="form-label-text") Квартира
+                                input(type="text", id="apartment", name="apartment", placeholder="Улица", class="form-item form-item--text")
+                        div(class="form-row form-row--w1")
+                            button(type="submit", class="button button--black button-color--pink") Сохранить
+    

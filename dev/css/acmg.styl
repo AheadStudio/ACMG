@@ -205,6 +205,8 @@ body
 				width 100%
 				margin-right 5px
 
+				border-radius 50%
+
 				svg
 					width 100%
 
@@ -554,6 +556,10 @@ body
 		justify-content space-between
 		margin-bottom 40px
 
+		&--border-bottom
+			padding-bottom 45px
+			border-bottom 1px solid #000
+
 		.form-holder
 			position relative
 
@@ -575,15 +581,42 @@ body
 					bottom 2px
 					max-width 140px
 
+			.form-link-moreinfo
+				position relative
+				font-size 14px
+
+				&:after
+					content ""
+					position absolute
+					top 100%
+					left 0
+					width 100%
+					height 1px
+					background #9B9B9B
+
+					opacity 1
+
+					transform translateY(3px)
+
+					transition transform 0.3s $transitionAnimation, opacity 0.3s $transitionAnimation
+
+				&:hover
+					&:after
+						opacity 0
+						transform translateY(10px)
+
 		&--w1
 			.form-holder
 				width 100%
 		&--w2
 			.form-holder
 				width 47%
+		&--w3
+			.form-holder
+				width 31%
 
 		.form-label
-			display block
+			display inline-block
 			margin-bottom 10px
 
 			.form-label-text
@@ -637,6 +670,8 @@ body
 			color $colorBlack
 
 		.form-label
+			cursor pointer
+
 			.jcf-checkbox
 				position relative
 				display inline-block
@@ -655,12 +690,14 @@ body
 
 				span
 					position: absolute
-					top 5.4px
-					left 4.9px
+					top 50%
+					left 50%
 					display block
 					width 20px
 					height 20px
-					background #979797
+					background #000
+					margin-top -10px
+					margin-left -10px
 					transform scale(0.5)
 					opacity 0
 					transition transform 0.3s $transitionAnimation, opacity 0.3s $transitionAnimation
@@ -669,6 +706,34 @@ body
 					span
 						opacity 1
 						transform translateY(0)
+
+			.form-item-title
+				display inline-block
+				vertical-align middle
+				font-size 18px
+
+		.form-padding
+			display block
+			padding-left 70px
+			margin-bottom 30px
+			box-sizing border-box
+
+		.form-group
+			display flex
+			justify-content flex-start
+			align-items center
+
+			margin-bottom 5px
+
+			.form-group-label
+				flex 1 1 0
+				margin-right 40px
+				margin-bottom 0
+
+			.form-item-price
+				margin-right 5px
+				font-size 16px
+				font-weight 600
 
 	.jcf-select-form-select
 		position relative
@@ -746,6 +811,7 @@ body
 			color #9B9B9B
 
 	.jcf-radio
+		position relative
 		cursor pointer
 		overflow hidden
 
@@ -791,6 +857,45 @@ body
 
 			&:last-child
 				margin-right 0
+
+		&.form-item--radio
+			position relative
+			display inline-block
+			width 28px
+			height 28px
+			vertical-align middle
+
+			margin-right 40px
+
+			border-radius 50%
+
+			border 1px solid transparent
+
+			border-color #4A4A4A
+
+			span
+				position absolute
+				top 50%
+				left 50%
+				display flex
+				align-items center
+				justify-content center
+
+				width 15px
+				height 15px
+
+				margin-top -25%
+				margin-left -25%
+
+				border-radius 50%
+
+				z-index 10
+
+				transition background 0.3s $transitionAnimation
+
+			&.jcf-checked
+				span
+					background #000
 
 
 .jcf-select-drop
@@ -2539,12 +2644,81 @@ body
 	padding 0 20px
 	box-sizing border-box
 
+	display flex
+	justify-content space-between
+	align-items stretch
+
 	margin 0 auto
+
+	.order-dec
+		max-width 65%
+		width 100%
+
+	.order-basket
+		max-width 25%
+		width 100%
+		margin-top 70px
+
+		.order-basket-title
+			margin-bottom 25px
+			font-size 24px
+			font-family "ProximaNovaBold"
+
+		.order-basket-list
+			padding-top 25px
+			padding-bottom 25px
+			border-top 1px solid #000
+			border-bottom 1px solid #000
+
+			margin-bottom 25px
+
+		.order-basket-item
+			display flex
+			justify-content space-between
+			align-items center
+			margin-bottom 25px
+
+			&:last-child
+				margin-bottom 0
+
+		.order-basket-name
+			font-size 14px
+			font-weight 600
+
+		.order-basket-price
+			font-size 16px
+			font-weight 600
+
+	.order-result
+		h1
+			padding-bottom 50px
+			margin-bottom 40px
+
+			border-bottom 1px solid #000
+
+		.order-result-subtitle
+			padding-bottom 40px
+			margin-bottom 50px
+			border-bottom 2px solid #000
+			font-size 24px
+			font-family "ProximaNovaBold"
+
+		.order-result-text
+			font-size 18px
+			padding-bottom 45px
+			margin-bottom 40px
+
+			border-bottom 1px solid #000
+
+		.order-result-back
+			a
+				font-size 14px
+				font-weight 600
 
 .page-header-order
 	max-width 1070px
 	padding 0 20px
-	margin 55px auto 0 auto
+	margin 55px auto 75px auto
 	box-sizing border-box
 
 	.header-order-holder
@@ -2555,3 +2729,103 @@ body
 		svg
 			display block
 			width 100%
+
+.page-footer-order
+	max-width 1070px
+	padding 0 20px
+	margin 55px auto 55px auto
+	box-sizing border-box
+
+	.page-footer-order-text
+		display inline-block
+		margin-right 3px
+
+.form-order
+	.form-order-title
+		padding-bottom 45px
+		margin-bottom 45px
+
+		border-bottom 1px solid #000
+		font-size 44px
+		font-family "ProximaNovaBold"
+
+	.form-section
+		.form-section-name
+			padding-bottom 35px
+			margin-bottom 30px
+
+			border-bottom 2px solid #000
+
+			font-size 24px
+			font-family "ProximaNovaBold"
+
+.account-container
+	display flex
+	justify-content space-between
+	align-content stretch
+
+	.account-menu-container
+		max-width 25%
+		width 100%
+
+	.account-panel
+		max-width 65%
+		width 100%
+
+		.account-panel-name
+			margin-bottom 40px
+			padding-bottom 40px
+			border-bottom 1px solid #000
+			font-size 18px
+			font-weight 600
+
+		.account-panel-history
+			margin-bottom 40px
+			font-size 16px
+			font-weight 600
+
+	.account-menu
+		.account-menu-logout
+			font-size 14px
+			font-weight 600
+
+		.account-info
+			padding-bottom 30px
+			border-bottom 1px solid #000
+
+			.account-avatar
+				display inline-block
+				vertical-align middle
+				width 30px
+				height 30px
+
+				margin-right 15px
+
+				svg
+					display inline-block
+
+					width 100%
+
+			.account-mail
+				display inline-block
+				vertical-align middle
+				font-size 18px
+				font-weight 600
+
+		.account-menu-list
+			margin-bottom 35px
+			padding 20px 0
+			box-sizing border-box
+			border-bottom 1px solid #000
+
+			.account-menu-item
+				margin-bottom 35px
+				padding-left 15px
+				box-sizing border-box
+
+				&:last-child
+					margin-bottom 0
+
+				.account-menu-item-link
+					font-size 14px
+					font-weight 600
