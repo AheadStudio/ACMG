@@ -110,9 +110,6 @@ body
 
 
 .page-header
-	display flex
-	justify-content space-between
-	align-items center
 	padding 10px 30px
 	box-sizing border-box
 
@@ -120,11 +117,65 @@ body
 
 	background $colorBlack
 
+	.header-burger-holder
+		position relative
+		display none
+		width 35px
+		height 20px
+		cursor: pointer;
+		transition transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+
+		.header-burger
+			position absolute
+			top 50%
+			display block
+			width 100%
+			height 2px
+			background #fff
+			transform translateY(-50%)
+			transition width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+
+		&:before
+		&:after
+			content ""
+			position absolute
+			top 0
+			left 0
+			display block
+			width 100%
+			height 2px
+			background #fff
+			transition transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+
+		&:after
+			top initial
+			bottom 0
+
+		&.active
+			transform rotate(180deg)
+
+			.header-burger
+				display none
+
+			&:before
+				width 100%
+				transform rotate(30deg) translateX(5px) translateY(8px)
+
+			&:after
+				width 100%
+				transform: rotate(-30deg) translateX(5px) translateY(-7px)
+
+	.page-header-container
+		display flex
+		justify-content space-between
+		align-items center
+
+
 	.header-coll
-		width 33.33333%
+		flex 1 1 0
 
 	.header-menu
-		max-width 415px
+		max-width 420px
 		width 100%
 
 		.header-menu-inner
@@ -139,6 +190,8 @@ body
 					margin-right 0
 
 		.header-menu-item
+			white-space nowrap
+
 			&.active
 				&:after
 					content ""
@@ -205,8 +258,21 @@ body
 				width 100%
 				margin-right 5px
 
-				border-radius 50%
+				overflow hidden
 
+				&--avatar
+					border-radius 50%
+				img
+					position absolute
+					top 0
+					left 0
+					right 0
+					bottom 0
+
+					display block
+					width 100%
+					height 100%
+					object-fit cover
 				svg
 					width 100%
 
@@ -221,7 +287,9 @@ body
 
 .page-footer
 	padding 55px 100px
-	box-sizing content-box
+	box-sizing border-box
+
+	margin-top 50px
 
 	background #000
 
@@ -309,7 +377,6 @@ body
 
 			.footer-cards-item
 				max-width 90px
-				width 100%
 				height 30px
 				margin-right 30px
 
@@ -358,11 +425,15 @@ body
 
 /* link button */
 .link
+	letter-spacing 0.5px
 	text-decoration none
 	color #000
 
 .link-bold
 	font-weight bold
+
+.link-small
+	font-size 14px
 
 .link-gray
 	color #9B9B9B
@@ -409,6 +480,32 @@ body
 	&:hover
 		color $colorPink
 
+		&:after
+			opacity 0
+			transform translateY(10px)
+
+.link-white--bottom
+	position relative
+	display inline
+
+	transition color 0.3s $transitionAnimation
+
+	&:after
+		content ""
+		position absolute
+		top 100%
+		left 0
+		width 100%
+		height 1px
+		background #fff
+
+		opacity 1
+
+		transform translateY(3px)
+
+		transition transform 0.3s $transitionAnimation, opacity 0.3s $transitionAnimation
+
+	&:hover
 		&:after
 			opacity 0
 			transform translateY(10px)
@@ -551,6 +648,10 @@ body
 .form
 	width 100%
 
+	.form-name
+		font-size 24px
+		font-weight 600
+
 	.form-row
 		display flex
 		justify-content space-between
@@ -560,15 +661,15 @@ body
 			padding-bottom 45px
 			border-bottom 1px solid #000
 
+		label.error
+			position absolute
+			left 0
+			bottom -20px
+			color #d0021b
+			font-size 14px
+
 		.form-holder
 			position relative
-
-			label.error
-				position absolute
-				left 0
-				bottom -20px
-				color #d0021b
-				font-size 14px
 
 			&--inside
 				.form-item
@@ -580,6 +681,7 @@ body
 					right 2px
 					bottom 2px
 					max-width 140px
+
 
 			.form-link-moreinfo
 				position relative
@@ -683,7 +785,7 @@ body
 
 				label.error
 					position absolute
-					top 105%
+					top 35px
 					left 0
 					color red
 					white-space nowrap
@@ -813,10 +915,20 @@ body
 	.jcf-radio
 		position relative
 		cursor pointer
-		overflow hidden
 
 		input[type=radio]
 			height 100%
+
+		label.error
+			position absolute
+			top 30px
+			bottom auto
+			padding-left 70px
+
+			display block
+			width 100%
+
+			white-space nowrap
 
 		span
 			position absolute
@@ -1126,7 +1238,7 @@ body
 	align-items flex-start
 	flex-wrap wrap
 
-	margin-bottom 100px
+	margin-bottom 45px
 
 	flex-wrap wrap
 
@@ -1165,7 +1277,7 @@ body
 			padding 40px 45px
 			box-sizing border-box
 
-			margin-bottom 25px
+			margin-bottom 45px
 
 			text-align center
 
@@ -1177,7 +1289,7 @@ body
 
 			.flex-img
 				display block
-				max-width 70%
+				max-height 100%
 
 		.flex-title-container
 			margin-bottom 30px
@@ -1227,7 +1339,7 @@ body
 
 			.flex-category
 				display inline-block
-				margin-right 10px
+				margin-right 15px
 				font-size 14px
 				text-transform uppercase
 
@@ -1266,7 +1378,7 @@ body
 			position relative
 			display inline-block
 
-			padding 5px 7px 5px 5px
+			padding 5px 8px 5px 10px
 			box-sizing border-box
 
 			vertical-align middle
@@ -1286,7 +1398,7 @@ body
 				left 0
 				bottom 0
 				display block
-				width 70%
+				width 80%
 				height 2px
 				background #979797
 				transform rotate(-20deg) translateY(12px)
@@ -1378,8 +1490,6 @@ body
 			font-size 14px
 
 		dd
-			margin-bottom 20px
-
 			line-height 25px
 
 			font-size 16px
@@ -1469,7 +1579,7 @@ body
 		border-bottom 1px solid #979797
 
 		.page-basket-holder
-			max-width 100px
+			max-width 110px
 			width 100%
 
 			margin-right 35px
@@ -1497,6 +1607,7 @@ body
 
 			dl
 				margin-bottom 0
+				grid-gap 10px 0
 
 			dt
 				margin-right 5px
@@ -1504,7 +1615,6 @@ body
 				color #9B9B9B
 
 			dd
-				margin-bottom 15px
 				font-size 14px
 				font-weight 600
 				color #000
@@ -1680,6 +1790,11 @@ body
 		width 100%
 		margin-right 10%
 
+		opacity 0
+		transform translateY(-50px)
+
+		transition opacity 0.6s $transitionAnimation, transform 0.6s $transitionAnimation
+
 	.slider-img
 		display block
 		width 100%
@@ -1687,6 +1802,11 @@ body
 	.slider-info
 		max-width 50%
 		width 100%
+
+		opacity 0
+		transform translateX(50px)
+
+		transition opacity 0.6s $transitionAnimation, transform 0.6s $transitionAnimation
 
 		.slider-info-name
 			width 100%
@@ -1701,6 +1821,18 @@ body
 			line-height 36px
 			font-size 20px
 			text-align center
+
+	.slider-item
+		&.slick-active
+			.slider-holder
+				transition-delay 0.8s
+				opacity 1
+				transform translateY(0)
+
+			.slider-info
+				transition-delay 0.8s
+				opacity 1
+				transform translateX(0)
 
 	.slider-arrow-container
 		position absolute
@@ -1752,7 +1884,7 @@ body
 					background #292728
 
 .home-slider
-	margin-bottom 100px
+	margin-bottom 95px
 
 .offers
 	position relative
@@ -1763,7 +1895,7 @@ body
 	padding 10px 145px 10px 45px
 	box-sizing border-box
 
-	margin-bottom 100px
+	margin-bottom 80px
 
 	background $colorGray
 
@@ -2158,48 +2290,57 @@ body
 				width 100%
 
 		.catalog-slider
+			position relative
 			margin-bottom 70px
-
 			.slick-dots
 				margin-top 20px
 
 		.catalog-holder-image
-			position relative
 			display flex
 			align-items center
 			justify-content center
 			width 100%
-			height 688px
 			background #f7f7f7
 
 			.catalog-image
 				display block
 				width 100%
 
-				&--w40
-					width 40%
+			&--half
+				display flex
+				align-items center
+				justify-content center
+				padding 20% 0
+				box-sizing border-box
+				background #f7f7f7
+				.catalog-image-container
+					max-width 40%
 					margin 0 auto
 
-			.catalog-text-image
-				position absolute
-				top 50%
-				left 50%
+					img
+						display block
+						width 100%
 
-				display block
-				max-width 420px
-				width 100%
+		.catalog-text-image
+			position absolute
+			top 50%
+			left 50%
 
-				font-size 64px
-				font-family "ProximaNovaBold"
-				line-height 74px
+			display block
+			max-width 420px
+			width 100%
 
-				text-align center
+			font-size 64px
+			font-family "ProximaNovaBold"
+			line-height 74px
 
-				transform translate(-50%,-50%)
+			text-align center
 
-				color #fff
+			transform translate(-50%,-50%)
 
-				z-index 10
+			color #fff
+
+			z-index 10
 
 		.catalog-item-info
 			margin-top 10px
@@ -2220,7 +2361,7 @@ body
 
 			.catalog-item-price
 				display inline-block
-				margin-right 30px
+				margin-right 20px
 				vertical-align middle
 
 				margin-bottom 40px
@@ -2233,7 +2374,9 @@ body
 			.catalog-item-oldprice
 				position relative
 				display inline-block
-				margin-bottom 40px
+				margin-bottom 35px
+
+				padding 0 5px
 
 				letter-spacing 1px
 
@@ -2253,10 +2396,10 @@ body
 					left 0
 					bottom 0
 					display block
-					width 70%
+					width 90%
 					height 2px
 					background #c0c0c0
-					transform rotate(-20deg) translateY(12px)
+					transform rotate(-14deg) translateY(12px)
 
 			.catalog-item-text
 				margin-bottom 35px
@@ -2477,10 +2620,10 @@ body
 	padding 0 20px
 	box-sizing border-box
 
-.basket-list
+.select-list
 	margin-bottom 45px
 
-	.basket-item
+	.select-item
 		padding 10px 0
 		box-sizing border-box
 
@@ -2499,9 +2642,12 @@ body
 			opacity 0
 			transform translateX(-50px)
 
-		.basket-holder
+		.select-holder
 			max-width 17%
+			min-width 165px
 			width 100%
+
+			min-height 145px
 
 			display flex
 			justify-content center
@@ -2518,11 +2664,11 @@ body
 				display block
 				width 100%
 
-		.basket-info
+		.select-info
 			max-width 78%
 			width 100%
 
-		.basket-info-row
+		.select-info-row
 			display flex
 			justify-content space-between
 			align-items center
@@ -2531,21 +2677,21 @@ body
 			&:last-child
 				margin-bottom 0
 
-		.basket-item-name
+		.select-item-name
 			display block
 			flex 1 1 0
 			font-size 18px
 			font-family "ProximaNovaBold"
 
-		.basket-item-count
+		.select-item-count
 			margin-right 60px
 
-		.basket-item-number
+		.select-item-number
 			margin-right 60px
 			font-size 18px
 			font-family "ProximaNovaBold"
 
-		.basket-item-close
+		.select-item-close
 			width 15px
 			height 15px
 			margin-right 15px
@@ -2569,24 +2715,24 @@ body
 							fill $colorPink
 
 
-		.basket-item-prop-list
+		.select-item-prop-list
 			display flex
 			justify-content flex-start
 			align-items center
 			flex-wrap wrap
 
-			.basket-item-prop-item
+			.select-item-prop-item
 				margin-right 45px
 				margin-bottom 10px
 
-				.basket-item-prop-name
+				.select-item-prop-name
 					display inline-block
 					margin-right 5px
 
 					font-size 14px
 					color #9B9B9B
 
-				.basket-item-prop-val
+				.select-item-prop-val
 					display inline-block
 					font-size 14px
 					font-family "ProximaNovaBold"
@@ -2594,27 +2740,27 @@ body
 .basket-form
 	overflow hidden
 
-.basket-result
+.select-result
 	width 50%
 	float right
 
-	.basket-summ
+	.select-summ
 		display flex
 		justify-content space-between
 		align-items center
 
 		margin-bottom 40px
 
-		.basket-summ-all
+		.select-summ-all
 			font-size 14px
 			font-family "ProximaNovaBold"
 
-		.basket-summ-count
+		.select-summ-count
 			margin-right 90px
 			font-size 16px
 			font-family "ProximaNovaBold"
 
-	.basket-promocode
+	.select-promocode
 		position relative
 		display flex
 		align-items stretch
@@ -2622,7 +2768,7 @@ body
 
 		margin-bottom 40px
 
-		.basket-promocode-text
+		.select-promocode-text
 			display inline-block
 			padding 15px
 			box-sizing border-box
@@ -2631,12 +2777,12 @@ body
 			font-size 14px
 			font-weight 600
 
-		.basket-promocode-button
+		.select-promocode-button
 			display inline-block
 			width 30%
 			border 1px solid #4a4a4a
 
-	.basket-send
+	.select-send
 		margin-bottom 40px
 
 .page-order
@@ -2704,16 +2850,13 @@ body
 			font-family "ProximaNovaBold"
 
 		.order-result-text
-			font-size 18px
+			line-height 28px
 			padding-bottom 45px
 			margin-bottom 40px
 
 			border-bottom 1px solid #000
 
-		.order-result-back
-			a
-				font-size 14px
-				font-weight 600
+			font-size 18px
 
 .page-header-order
 	max-width 1070px
@@ -2764,7 +2907,7 @@ body
 	justify-content space-between
 	align-content stretch
 
-	.account-menu-container
+	.account-menu
 		max-width 25%
 		width 100%
 
@@ -2776,13 +2919,69 @@ body
 			margin-bottom 40px
 			padding-bottom 40px
 			border-bottom 1px solid #000
+
 			font-size 18px
 			font-weight 600
 
-		.account-panel-history
+		.account-panel-history-item
 			margin-bottom 40px
 			font-size 16px
 			font-weight 600
+
+		.account-panel-order
+			.account-panel-order-include
+				display flex
+				justify-content space-between
+				align-items center
+				margin-bottom 40px
+
+				.account-panel-order-item
+					display inline-block
+
+					&--w1
+						flex 5 5 0
+						text-align right
+
+					&--w3
+						flex 1 3 0
+
+			.account-panel-order-products
+				display inline-block
+				margin-right 10px
+				font-size 14px
+				font-weight 600
+				color #9B9B9B
+
+			.account-panel-order-item-val
+				font-size 14px
+				font-weight 600
+				color #000
+
+			.account-panel-order-list
+				padding 30px 0
+				box-sizing border-box
+				border-top 1px solid #000
+				border-bottom 1px solid #000
+
+				margin-bottom 30px
+
+				.account-panel-order-item
+					margin-bottom 40px
+					font-size 14px
+					font-weight 600
+
+					&:last-child
+						margin-bottom 0
+
+			.account-panel-order-info
+
+				.account-panel-order-item
+					margin-bottom 25px
+
+		.account-panel-favorite
+			.account-panel-name
+				padding-bottom 0
+				border-bottom none
 
 	.account-menu
 		.account-menu-logout
@@ -2794,12 +2993,28 @@ body
 			border-bottom 1px solid #000
 
 			.account-avatar
+				position relative
 				display inline-block
 				vertical-align middle
 				width 30px
 				height 30px
 
 				margin-right 15px
+				border-radius 50%
+				overflow hidden
+
+				img
+					position absolute
+					top 0
+					left 0
+					right 0
+					bottom 0
+
+					display block
+					width 100%
+					height 100%
+					object-fit cover
+
 
 				svg
 					display inline-block
@@ -2829,3 +3044,202 @@ body
 				.account-menu-item-link
 					font-size 14px
 					font-weight 600
+
+
+.form-popup
+	.btn-container-close
+		position absolute
+		top 20px
+		right 20px
+
+		width 15px
+		height 15px
+		padding 0
+
+		svg
+			display block
+			width 100%
+
+	&.mfp-bg
+		background #fff
+
+		opacity 0.5
+
+	.mfp-content
+		opacity 0
+		transform translateX(-30px)
+		transition transform 0.3s $transitionAnimation, opacity 0.3s $transitionAnimation
+
+	&.mfp-wrap
+		&.mfp-ready
+			.mfp-content
+				opacity 1
+				transform translateX(0)
+
+		&.mfp-removing
+			.mfp-content
+				opacity 0
+				transform translateY(-30px)
+
+		.mfp-content
+			max-width 440px
+			width 100%
+
+			padding 45px 20px 0 35px
+			box-sizing border-box
+
+			border 1px solid #979797
+
+			background #fff
+
+.mobile-menu-container
+	position fixed
+	top 0
+	right 0
+	left 0
+	bottom 0
+
+	display none
+	width 100%
+	min-height 100vh
+	height 100%
+	background #000
+
+	z-index 100000
+
+	overflow-y auto
+
+	transition opacity 0.3s $transitionAnimation, transform 0.3s $transitionAnimation
+	transform translateX(-50%)
+	opacity 0
+
+	.mobile-menu
+		padding 50px 30px 20px 30px
+		box-sizing border-box
+
+	.mobile-menu-item-holder
+		margin-bottom 20px
+
+	.mobile-menu-item
+		font-size 24px
+
+		&.active
+			color $colorPink
+
+	.mobile-menu-profile
+		display flex
+		align-items center
+
+		padding 20px 30px
+
+		border-top 1px solid #fff
+		border-bottom 1px solid #fff
+
+		&.active
+			background #fff
+			border-bottom 1px solid #000
+
+			.mobile-menu-profile-name
+				color #000
+
+			.mobile-menu-profile-avatar
+				svg
+					path
+						fill #000
+
+		.mobile-menu-profile-avatar
+			position relative
+			width 30px
+			margin-right 10px
+
+			img
+				position absolute
+				top 0
+				left 0
+				right 0
+				bottom 0
+
+				display block
+				width 100%
+				height 100%
+
+				z-index: 1
+
+				object-fit cover
+
+		.mobile-menu-profile-name
+			font-size 18px
+			color #fff
+
+	.mobile-menu-profile-menu
+		padding 20px 30px
+
+		background #fff
+
+		margin-bottom 20px
+
+		transition all 0.3s $transitionAnimation
+		height 0
+		opacity 0
+		display none
+
+		.mobile-menu-profile-menu-container
+			border-bottom: 1px solid #000
+			margin-bottom 30px
+
+		.mobile-menu-profile-menu-item
+			margin-bottom 30px
+			font-size 14px
+
+		&.active
+			display block
+
+		&.active-show
+			opacity 1
+			height 290px
+
+	.mobile-menu-info
+		padding 0 30px
+		margin-top 30px
+		margin-bottom 30px
+
+		.mobile-menu-info-item
+			margin-bottom 20px
+
+	.close-menu
+		position absolute
+		top 20px
+		right 20px
+
+		display block
+		width 20px
+		height 20px
+
+		svg
+			display block
+			width 100%
+
+			path
+				fill #fff
+
+body
+	&.open-menu
+		.mobile-menu-container
+			display block
+	&.open-menu-show
+		.mobile-menu-container
+			opacity 1
+			transform: translateX(0);
+
+.form-password
+	display none
+	opacity 0
+	transform translateX(-50px)
+	transition opacity 0.3s $transitionAnimation, transform 0.3s $transitionAnimation
+
+	&.active
+		display block
+
+	&.active-show
+		opacity 1
+		transform translateX(0)

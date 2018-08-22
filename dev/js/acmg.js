@@ -8,6 +8,49 @@
 
 		return {
 
+			menu: {
+
+				init: function() {
+					var self = this;
+
+					self.start();
+				},
+
+				start: function() {
+					var self = this,
+						$menu = $(".header-burger-holder");
+
+					$menu.on("click", function() {
+						if ($sel.body.hasClass("open-menu")) {
+							self.hide($menu);
+						} else {
+							self.show($menu);
+						}
+					});
+
+					$(".close-menu").on("click", function() {
+						self.hide($menu);
+					})
+				},
+
+				show: function($el) {
+					$el.addClass("active");
+					$sel.body.addClass("open-menu");
+					setTimeout(function() {
+						$sel.body.addClass("open-menu-show");
+					},300)
+				},
+
+				hide: function($el) {
+					$el.removeClass("active");
+					setTimeout(function() {
+						$sel.body.removeClass("open-menu");
+					},300)
+					$sel.body.removeClass("open-menu-show");
+				},
+
+			},
+
 			slider: function() {
 				var self = this,
 					$slick = $(".slider-list"),
@@ -180,7 +223,6 @@
 														});
 													},
 													ajaxContentAdded: function() {
-														DR_DUBKOV_NEW.reload();
 														$(".btn-container-close").on("click", function() {
 															$.magnificPopup.close();
 														});
@@ -312,25 +354,27 @@
 					self.showSearch();
 					self.catalog.init();
 					self.fixedHeader.init();
+					self.showProfileMenu();
+					self.showPsswords();
 				},
 
 				fixedHeader: {
 					init: function() {
-						if ($sel.window.width() > "820") {
-							$sel.window.on("scroll", function() {
-								var hh = $(".page-header").outerHeight(),
-									sTop = $sel.window.scrollTop();
-								if(sTop > hh + 50) {
-									$sel.body.addClass("fixed-header");
-									setTimeout(function() {
-										$sel.body.addClass("fixed-header--show");
-									}, 100);
-								} else {
-									$sel.body.removeClass("fixed-header--show");
-									$sel.body.removeClass("fixed-header");
-								}
-							});
-						}
+
+						$sel.window.on("scroll", function() {
+							var hh = $(".page-header").outerHeight(),
+								sTop = $sel.window.scrollTop();
+							if(sTop > hh + 50) {
+								$sel.body.addClass("fixed-header");
+								setTimeout(function() {
+									$sel.body.addClass("fixed-header--show");
+								}, 100);
+							} else {
+								$sel.body.removeClass("fixed-header--show");
+								$sel.body.removeClass("fixed-header");
+							}
+						});
+
 					}
 				},
 
@@ -490,7 +534,7 @@
 
 						$number.on("change", function() {
 							var $el = $(this),
-								$container = $el.closest(".basket-item"),
+								$container = $el.closest(".select-item"),
 								$priceText = $container.find("[data-price]");
 
 							$newPrice = $priceText.data("price") * $el.val();
@@ -502,11 +546,11 @@
 
 					busketremoveItem: function() {
 						var self = this,
-							$closeButton = $(".basket-form").find(".button-basket-close");
+							$closeButton = $(".select-list").find(".button-select-close");
 
 						$closeButton.on("click", function() {
 							var $el = $(this),
-								$container = $el.closest(".basket-item");
+								$container = $el.closest(".select-item");
 
 							$container.addClass("hide");
 
@@ -540,12 +584,189 @@
 
 				},
 
+				showProfileMenu: function() {
+					var self = this;
+					$(".mobile-menu-profile").on("click",function() {
+						var $el = $(this);
+						$menu = $(".mobile-menu-profile-menu");
 
-			}
+						if (!$menu.hasClass("active")) {
+							$menu.addClass("active");
+							$el.addClass("active");
+
+							setTimeout(function() {
+								$menu.addClass("active-show");
+							},10)
+						} else {
+							$menu.removeClass("active-show");
+							$el.removeClass("active");
+
+							setTimeout(function() {
+								$menu.removeClass("active");
+							},10)
+						}
+					})
+				},
+				showPsswords: function() {
+					var self = this;
+					$(".toggle-password").on("click",function(e) {
+						e.preventDefault();
+						var $el = $(this);
+						$password = $(".form-password");
+
+						if (!$password.hasClass("active")) {
+							$password.addClass("active");
+							setTimeout(function() {
+								$password.addClass("active-show");
+							},100)
+						} else {
+							$password.removeClass("active-show");
+							setTimeout(function() {
+								$password.removeClass("active");
+							},100)
+						}
+					})
+				},
+
+			},
 
 
+			toggleTabs: {
+
+				elements: [],
+
+				init: function() {
+					var self = this,
+						$filterItem = $("[data-toggle-tab]");
+
+					$toggleItem.each(function functionName() {
+						var el = $(this);
+						if (!el.hasClass("active")) {
+							var hideTab = $("[data-toggle-item *='"+ el.data("toggleTab") +"']");
+
+							el.removeClass("active-tab");
+							hideTab.addClass("hide-block");
+							hideTab.addClass("hide");
+
+						} else {
+							el.addClass("active-tab");
+						}
+					});
+
+					$toggleItem.on("click", function(e) {
+						var item = $(this),
+							dataItem = item.data("filterTab"),
+							$allTabs = $("[data-filter-tab *='" + dataItem.split("_")[0] + "']"),
+							$allItem = $("[data-filter-item *= '" + dataItem.split("_")[0] + "']"),
+							$showItem;
+
+						if (dataItem.indexOf("reset") !== -1) {
+							self.hideAll($allItem);
+							item.removeClass("active-tab");
+							item.removeClass("active");
+							event.preventDefault();
+						}
+
+						$allTabs.removeClass("active");
+						$allTabs.removeClass("active-tab");
+
+						setTimeout(function() {
+							item.addClass("active");
+							item.addClass("active-tab");
+						}, 50);
+
+						$showItem = $("[data-filter-item='" + dataItem + "']");
+
+						self.show($showItem, $allItem);
+
+						$(".sort-table").trigger("update");
+					});
+
+				},
+
+				show: function(el, elements) {
+					var self = this;
+
+					elements.addClass("hide");
+					setTimeout(function() {
+						elements.addClass("hide-block");
+						el.removeClass("hide-block");
+
+						setTimeout(function() {
+							el.removeClass("hide");
+						},50);
+
+					},300);
+
+				},
+
+				hideAll: function(elements) {
+					var self = this;
+
+					elements.addClass("hide");
+					elements.addClass("hide-block");
+
+				}
+
+			},
 
 
+			popup: {
+
+				init: function() {
+					var self = this;
+
+					self.magnificPopup();
+				},
+
+				magnificPopup: function() {
+					$popup = $(".mfp-modal");
+
+					$popup.each(function() {
+						var el = $(this),
+							elType = el.data("mfpType"),
+							elAjaxContent = el.data("mfpAjaxContent"),
+							elCloseInside = el.data("mfpCloseInside"),
+							elCloseBcg = el.data("mfpCloseBcg"),
+							elClass = el.data("mfpClass");
+
+						if (elAjaxContent) {
+							parseAjax = function(mfpResponse) {
+								mfpResponse.data = $(mfpResponse.data).find(elAjaxContent);
+							}
+						} else {
+							parseAjax = null;
+						}
+
+						el.magnificPopup({
+							type: elType ? elType : "inline",
+							tLoading: "Загрузка...",
+							closeMarkup: '<button title="%title%" type="button" class="mfp-close btn-container-close"><svg data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.66 50.66"><path d="M5.63 0l45 45L45 50.66 0 5.63z" fill="#4a4a4a"/><path d="M50.66 5.63l-45 45L0 45 45 0z" fill="#4a4a4a"/></svg></button>',
+							mainClass:  elClass ? elClass : "inline",
+							removalDelay: 300,
+							closeOnBgClick: elCloseBcg ? elCloseBcg : false,
+							closeBtnInside: elCloseInside ? elCloseInside : false,
+							callbacks: {
+								open: function(el) {
+									$(".btn-container-close").on("click", function() {
+										$.magnificPopup.close();
+									});
+
+								},
+								ajaxContentAdded: function() {
+									ACMG.reload();
+									$(".btn-container-close").on("click", function() {
+										$.magnificPopup.close();
+									});
+								},
+								parseAjax: parseAjax,
+							}
+						});
+					})
+
+				}
+
+			},
 
 		};
 
@@ -555,8 +776,12 @@
 	ACMG.forms.init();
 	ACMG.ajaxLoader();
 	ACMG.miniScripts.init();
+	ACMG.popup.init();
+	ACMG.menu.init();
 
 	ACMG.reload = function() {
+		ACMG.forms.init();
+		ACMG.popup.init();
 	}
 
 })(jQuery);

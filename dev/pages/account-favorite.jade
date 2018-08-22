@@ -1,0 +1,93 @@
+extends ../templates/base
+
+block content
+    div(class="page-inner page-inner--w1")
+        div(class="account")
+            div(class="page-title center")
+                div(class="page-text")
+                    h1 Личный кабинет
+                    
+            div(class="account-container")
+                div(class="account-menu")
+                    div(class="account-menu-container", data-sticky, data-sticky-offset-top="100")
+                        div(class="account-info")
+                            div(class="account-avatar")
+                                include ../../prod/svg/user-black.svg
+                            div(class="account-mail") serginacakes@gmail.com
+                        div(class="account-menu-list")    
+                            div(class="account-menu-item")
+                                a(href="profile.html", class="link link-black link-black--bottom-reverse account-menu-item-link") Профиль
+                            div(class="account-menu-item")
+                                a(href="orders.html", class="link link-black link-black--bottom-reverse account-menu-item-link") Заказы
+                            div(class="account-menu-item")
+                                a(href="favorite.html", class="link link-black link-black--bottom-reverse account-menu-item-link") Избранное
+                            div(class="account-menu-item")
+                                a(href="bonus.html", class="link link-black link-black--bottom-reverse account-menu-item-link") Бонусная карта
+                        a(href="#", class="link link-black link-black--bottom account-menu-logout") Выйти
+                    
+                div(class="account-panel")
+                    div(class="account-panel-favorite")
+                        div(class="account-panel-name") Избранное
+                    
+                        div(class="select-list")
+                            div(class="select-item")
+                                div(class="select-holder")
+                                    img(src="../dummy/magazine2.jpg")
+                                div(class="select-info")
+                                    div(class="select-info-row")
+                                        div(class="select-item-name")
+                                            a(href="#", class="link link-black link-black--bottom-reverse") Подписка на журнал Forbes
+                                            
+                                        div(class="select-item-close")
+                                            button(type="button", class="button button-select-close")
+                                                include ../../prod/svg/close.svg
+                                                
+                                    div(class="select-info-row")
+                                        div(class="select-item-number", data-price="1200") 1 200.– 
+                                        
+                            div(class="select-item")
+                                div(class="select-holder")
+                                    img(src="../dummy/shop14.png")
+                                div(class="select-info")
+                                    div(class="select-info-row")
+                                        div(class="select-item-name") 
+                                            a(href="#", class="link link-black link-black--bottom-reverse") Noname AIC Denim Light Wash 30" Inseam
+                                        
+                                        div(class="select-item-close")
+                                            button(type="button", class="button button-select-close")
+                                                include ../../prod/svg/close.svg
+                                                
+                                    div(class="select-info-row")
+                                        div(class="select-item-number", data-price="5200") 5 200.– 
+                                                
+                            div(class="select-item")
+                                div(class="select-holder")
+                                    img(src="../dummy/shop1.png")
+                                div(class="select-info")
+                                    div(class="select-info-row")
+                                        div(class="select-item-name")
+                                            a(href="#", class="link link-black link-black--bottom-reverse") Noname AIC Denim Light Wash 30" Inseam
+                                        
+                                        div(class="select-item-close")
+                                            button(type="button", class="button button-select-close")
+                                                include ../../prod/svg/close.svg
+                                                
+                                    div(class="select-info-row")
+                                        div(class="select-item-number", data-price="1200") 1 200.– 
+                            
+                            div(class="select-item")
+                                div(class="select-holder")
+                                    img(src="../dummy/shop14.png")
+                                div(class="select-info")
+                                    div(class="select-info-row")
+                                        div(class="select-item-name") 
+                                            a(href="#", class="link link-black link-black--bottom-reverse") Noname AIC Denim Light Wash 30" Inseam
+                                        
+                                        div(class="select-item-close")
+                                            button(type="button", class="button button-select-close")
+                                                include ../../prod/svg/close.svg
+                                                
+                                    div(class="select-info-row")
+                                        div(class="select-item-number", data-price="5200") 5 200.– 
+
+                            

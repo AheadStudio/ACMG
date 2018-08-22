@@ -31,7 +31,7 @@ block content
                         div(class="slider-arrow-container")
                     
                     div(class="catalog-reviews")
-                        div(class="catalog-reviews-title") Отзывы от товаре
+                        div(class="catalog-reviews-title") Отзывы о товаре
                         
                         div(id="reviews", class="catalog-reviews-list")
                             div(class="catalog-reviews-item")
@@ -46,7 +46,7 @@ block content
                         
                     div(class="catalog-reviews-auth")
                         div(class="catalog-reviews-auth-text") Чтобы оставить свой отзыв, нужно авторизоваться
-                        button(type="submit", class="button button--border-black catalog-reviews-auth-button") Войти
+                        button(type="submit", href="form-auth.html", class="button button--border-black catalog-reviews-auth-button mfp-modal", data-mfp-class="form-popup", data-mfp-close-bcg="true", data-mfp-type="ajax", data-mfp-ajax-content="#form", data-mfp-close-inside="true") Войти
                             
                 div(class="catalog-card-item catalog-card-item--30")
                     div(class="catalog-item-info")
@@ -54,7 +54,7 @@ block content
                             a(href="#", class="link link-black--bottom-reverse catalog-item-section") ANTW x SNC 
                             div(class="catalog-item-name") Свитшот Barrymore
                             div(class="catalog-item-price") 4 799.– 
-                            div(class="catalog-item-oldprice") 5600.– 
+                            div(class="catalog-item-oldprice") 5 600.– 
                             div(class="catalog-item-text") Сделай свою уникальную вышивку. Выбери цвет свитшот. Выбери один из трех вариантов расположения вышивки и ее цвет. Напиши свое имя рядом с брендом SNC. 
                             div(class="catalog-item-composition") 
                                 dl
@@ -86,6 +86,12 @@ block content
                                             input(type="radio", name="embroidery", class="form-item", data-jcf-class="form-item--radio-catalog", data-jcf-span-color="#fbea0d")
                                             input(type="radio", name="embroidery", class="form-item", data-jcf-class="form-item--radio-catalog", data-jcf-span-color="#4a4a4a")
 
+                                div(class="form-row")
+                                    select(class="form-select form-select--darkgray change-rate", placeholder="Место нанесения:")
+                                        option Впереди внизу
+                                        option Впереди сверху
+                                    
+                                    
                                 div(class="form-row catalog-form-order")
                                     input(type="text", id="name", name="name", placeholder="1", class="form-item form-item--text form-catalog-order-number")
                                     button(type="submit", class="button button--black button-color--pink form-catalog-order-submit") Купить

@@ -1,0 +1,35 @@
+extends ../templates/base
+
+block content
+    div(class="page-inner page-inner--w2")
+        div(class="page-text")
+            form(id="form", class="form")
+                div(class="form-row form-row--w1")
+                    div(class="form-name") Регистрация
+                div(class="form-row form-row--w1")
+                    div(class="form-holder")
+                        label(for="name", class="form-label")
+                            span(class="form-label-text") Полное имя
+                        input(type="name", id="name", name="name", required, data-error="Ваше имя", aria-required="true", placeholder="Полное имя", class="form-item form-item--text")
+                div(class="form-row form-row--w1")
+                    div(class="form-holder")
+                        label(for="email", class="form-label")
+                            span(class="form-label-text") Email
+                        input(type="email", id="email", name="email", required, data-error="Ваш email", aria-required="true", placeholder="Email", class="form-item form-item--text")
+                div(class="form-row form-row--w1")
+                    div(class="form-holder")
+                        label(for="text", class="form-label")
+                            span(class="form-label-text") Пароль
+                        input(type="text", id="text", name="text", required, data-error="Ваш пароль", aria-required="true", placeholder="Пароль", class="form-item form-item--text")
+                div(class="form-row form-row--w1")
+                    div(class="form-holder")
+                        label(for="text", class="form-label")
+                            span(class="form-label-text") Пароль еще раз
+                        input(type="text", id="text", name="text", required, data-error="Повторите ваш пароль", aria-required="true", placeholder="Пароль еще раз", class="form-item form-item--text")
+                div(class="form-row form-row--w1")
+                    button(type="submit", class="button button--black button-color--pink") Зарегистрироваться
+                div(class="form-row form-row--w1")
+                    div(class="form-text center") Члены ACMG-store являются первыми, кто узнает о наших последних выпусках и продуктах. Получайте по электронной почте одну неделю с нашими последними новостями, функциями и эксклюзивными предложениями. 
+                div(class="form-row form-row--w1")
+                    div(class='form-holder center')
+                        a(href="#", class="link link-black link-small link-bold link-black--bottom") Вернуться в магазин

@@ -1,0 +1,25 @@
+extends ../templates/base
+
+block content
+    div(class="page-inner page-inner--w2")
+        div(class="page-text")
+            form(id="form", class="form")
+                div(class="form-row form-row--w1")
+                    div(class="form-name") Войти на сайт
+                div(class="form-row form-row--w1")
+                    div(class="form-holder")
+                        label(for="email", class="form-label")
+                            span(class="form-label-text") Email
+                        input(type="email", id="email", name="email", required, data-error="Ваш email", aria-required="true", placeholder="Email", class="form-item form-item--text")
+                div(class="form-row form-row--w1")
+                    div(class="form-holder")
+                        label(for="text", class="form-label")
+                            span(class="form-label-text") Пароль
+                        input(type="text", id="text", name="text", required, data-error="Ваш пароль", aria-required="true", placeholder="Пароль", class="form-item form-item--text")
+                div(class="form-row form-row--w1")
+                    a(href="#", class="link link-black link-small link-bold link-black--bottom") Забыли пароль?
+                div(class="form-row form-row--w1")
+                    button(type="submit", class="button button--black button-color--pink") Войти
+                div(class="form-row form-row--w1")
+                    div(class='form-holder center')
+                        a(href="#", class="link link-black link-small link-bold link-black--bottom") Создать аккаунт

@@ -59,6 +59,10 @@ html(lang="ru", class="no-js", prefix="og:http://ogp.me/ns#")
 				media: "screen",
 				href: "../css/" + info.code + ".css",
 				noCache: true
+			}, {
+				media: "screen",
+				href: "../css/" + info.code + ".responsive.css",
+				noCache: true
 			}
 		])
 
@@ -66,63 +70,68 @@ html(lang="ru", class="no-js", prefix="og:http://ogp.me/ns#")
 
 		div(class="page")
 			if page.code !== "order" && page.code !== "order-result"
-				header(class="page-header", itemscope, itemtype="http://schema.org/WPHeader")
-					div(class="header-coll")
-						+menu({
-							rootClass: "header-menu",
-							items: [
-								{
-									name: "Каталог",
-									href: "catalog.html",
-									linkClass: page.code == "catalog" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
-									title: "",
-								}, {
-									name: "Бренды",
-									href: "brands.html",
-									linkClass: page.code == "brands" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
-									title: "",
-								}, {
-									name: "Доставка",
-									href: "delivery.html",
-									linkClass: page.code == "delivery" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
-									title: "",
-								}, {
-									name: "О проекте",
-									href: "about.html",
-									linkClass:  page.code == "about" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
-									title: "",
-								}, {
-									name: "Контакты",
-									href: "contacts.html",
-									linkClass:  page.code == "contacts" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
-									title: "",
-								}
-							]
-						})
-					div(class="header-coll")
-						if page.code == "home"
-							div(class="header-logo")
-								include ../../prod/svg/logo.svg
-						else
-							a(href="home.html", class="header-logo")
-								include ../../prod/svg/logo.svg
+				header(class="page-header mfp-margin-scroll", itemscope, itemtype="http://schema.org/WPHeader")
+					div(class="page-header-container")
+						div(class="header-coll")
+							div(class="header-burger-holder")
+								div(class="header-burger")
+									
+							+menu({
+								rootClass: "header-menu",
+								items: [
+									{
+										name: "Каталог",
+										href: "catalog.html",
+										linkClass: page.code == "catalog" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
+										title: "",
+									}, {
+										name: "Бренды",
+										href: "brands.html",
+										linkClass: page.code == "brands" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
+										title: "",
+									}, {
+										name: "Доставка",
+										href: "delivery.html",
+										linkClass: page.code == "delivery" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
+										title: "",
+									}, {
+										name: "О проекте",
+										href: "about.html",
+										linkClass:  page.code == "about" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
+										title: "",
+									}, {
+										name: "Контакты",
+										href: "contacts.html",
+										linkClass:  page.code == "contacts" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
+										title: "",
+									}
+								]
+							})
 						
-					div(class="header-coll")
-						div(class="header-userbar")
-							a(href="#user-menu" class="header-userbar-link header-userpanel")
-								span(class="header-userbar-name header-userbar-name--mail") serginacakes@gmail.com
-								div(class="header-userbar-icon")
-									include ../../prod/svg/user.svg
-							a(href="favorite.html" class="header-userbar-link")
-								span(class="header-userbar-name") Избранное
-								div(class="header-userbar-icon")
-									include ../../prod/svg/favorite.svg
-								span(class="header-userbar-count") 12
-							a(href="basket.html" class="header-userbar-link header-basket")
-								span(class="header-userbar-name") Корзина
-								div(class="header-userbar-icon")
-									include ../../prod/svg/box.svg
-								span(class="header-userbar-count") 0
+						div(class="header-coll")
+							if page.code == "home"
+								div(class="header-logo")
+									include ../../prod/svg/logo.svg
+							else
+								a(href="home.html", class="header-logo")
+									include ../../prod/svg/logo.svg
+							
+						div(class="header-coll")
+							div(class="header-userbar")
+								a(href="#user-menu" class="header-userbar-link header-userpanel")
+									span(class="header-userbar-name header-userbar-name--mail") serginacakes@gmail.com
+									div(class="header-userbar-icon header-userbar-icon--avatar")
+										include ../../prod/svg/user.svg
+								a(href="account-favorite.html" class="header-userbar-link")
+									span(class="header-userbar-name") Избранное
+									div(class="header-userbar-icon")
+										include ../../prod/svg/favorite.svg
+									span(class="header-userbar-count") 12
+								a(href="basket.html" class="header-userbar-link header-basket")
+									span(class="header-userbar-name") Корзина
+									div(class="header-userbar-icon")
+										include ../../prod/svg/box.svg
+									span(class="header-userbar-count") 0
 			else
 				header(class="page-header-order", itemscope, itemtype="http://schema.org/WPHeader")
 					div(class="header-order-holder")
@@ -137,13 +146,13 @@ html(lang="ru", class="no-js", prefix="og:http://ogp.me/ns#")
 					div(class="page-userpanel-title") serginacakes@gmail.com
 					div(class="page-userpanel-menu")
 						div(class="page-userpanel-menu-item")
-							a(href="profile.html", class="link link-black link-black--bottom-reverse") Профиль
+							a(href="profile.html", class="link link-black") Профиль
 						div(class="page-userpanel-menu-item")
-							a(href="profile.html", class="link link-black link-black--bottom-reverse") Заказы
+							a(href="profile.html", class="link link-black") Заказы
 						div(class="page-userpanel-menu-item")
-							a(href="profile.html", class="link link-black link-black--bottom-reverse") Избранное
+							a(href="profile.html", class="link link-black") Избранное
 						div(class="page-userpanel-menu-item")
-							a(href="profile.html", class="link link-black link-black--bottom-reverse") Бонусная карта
+							a(href="profile.html", class="link link-black") Бонусная карта
 							
 					a(href="#", class="link link-black link-black--bottom page-userpanel-close") Выйти
 		
@@ -189,6 +198,66 @@ html(lang="ru", class="no-js", prefix="og:http://ogp.me/ns#")
 							li After party
 							li VIP lounge
 							li Круглый стол с миллиардерами и инвесторами*
+		
+		
+			div(class="mobile-menu-container")
+				+menu({
+					rootClass: "mobile-menu",
+					items: [
+						{
+							name: "Каталог",
+							href: "catalog.html",
+							linkClass: page.code == "catalog" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
+							title: "",
+						}, {
+							name: "Бренды",
+							href: "brands.html",
+							linkClass: page.code == "brands" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
+							title: "",
+						}, {
+							name: "Доставка",
+							href: "delivery.html",
+							linkClass: page.code == "delivery" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
+							title: "",
+						}, {
+							name: "О проекте",
+							href: "about.html",
+							linkClass:  page.code == "about" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
+							title: "",
+						}, {
+							name: "Контакты",
+							href: "contacts.html",
+							linkClass:  page.code == "contacts" ? "link link-white link-pink--bottom-reverse active" : "link link-white link-pink--bottom-reverse",
+							title: "",
+						}
+					]
+				})
+				div(class="mobile-menu-profile")
+					div(class="mobile-menu-profile-avatar")
+						include ../../prod/svg/user.svg
+					div(class="mobile-menu-profile-name") sereginakse@mail.ru
+				div(class="mobile-menu-profile-menu")
+					div(class="mobile-menu-profile-menu-container")
+						div(class="mobile-menu-profile-menu-item")
+							a(href="account-profile.html", class="link link-black") Профиль
+						div(class="mobile-menu-profile-menu-item")
+							a(href="account-order.html", class="link link-black") Заказы
+						div(class="mobile-menu-profile-menu-item")
+							a(href="account-account-favorite.html", class="link link-black") Избранное
+						div(class="mobile-menu-profile-menu-item")
+							a(href="account-profile.html", class="link link-black") Бонусная карта
+					div(class="mobile-menu-profile-menu-item mobile-menu-profile-menu-item--logout") 	
+						a(href="account-profile.html", class="link link-black link-black--bottom") Выйти
+				div(class="mobile-menu-info")
+					div(class="mobile-menu-info-item")
+						a(href="tel:+79254996908", class="link link-white link-color--pink") +7 (925) 499-63-08
+					div(class="mobile-menu-info-item")
+						a(href="mailto:info@acmg.store", class="link link-white link-white--bottom") info@acmg.store
+
+				div(class="close-menu")
+					include ../../prod/svg/close.svg
+		
+		
 		if page.code !== "order" && page.code !== "order-result"
 			footer(class="page-footer", itemscope, itemtype="http://schema.org/WPFooter")
 				div(class="footer-row")
@@ -227,7 +296,7 @@ html(lang="ru", class="no-js", prefix="og:http://ogp.me/ns#")
 						div(class="footer-social-item") 
 							a(href="#", class="link link-white footer-link", target="_blank") Instagram
 					div(class="footer-creators")
-						a(href="#", class="link link-white footer-creators-link", target="_blank") 
+						a(href="http://www.createfuture.ru", class="link link-white footer-creators-link", target="_blank") 
 							span Сделано&nbsp;
 							span(class="footer-creators-name") Create Future
 		else

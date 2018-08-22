@@ -8,8 +8,8 @@ block content
                     h1 Личный кабинет
                     
             div(class="account-container")
-                div(class="account-menu-container")
-                    div(class="account-menu")
+                div(class="account-menu")
+                    div(class="account-menu-container")
                         div(class="account-info")
                             div(class="account-avatar")
                                 include ../../prod/svg/user-black.svg
@@ -66,6 +66,20 @@ block content
                                 label(for="apartment", class="form-label")
                                     span(class="form-label-text") Квартира
                                 input(type="text", id="apartment", name="apartment", placeholder="Улица", class="form-item form-item--text")
+                        div(class="form-row form-row--w1")
+                            a(href="#", class="link link-black link-black--bottom toggle-password") Сменить пароль
+                        div(class="form-password")
+                            div(class="form-row form-row--w1")
+                                div(class="form-holder")
+                                    label(for="password", class="form-label")
+                                        span(class="form-label-text") Новый пароль
+                                    input(type="text", id="name", name="password", required, data-error="Ваш новый пароль", aria-required="true", placeholder="Имя", class="form-item form-item--text")
+                            div(class="form-row form-row--w1")
+                                div(class="form-holder")
+                                    label(for="password_", class="form-label")
+                                        span(class="form-label-text") Повторите новый пароль
+                                    input(type="text", id="name", name="password_", required, data-error="Повторите пароль", aria-required="true", placeholder="Имя", class="form-item form-item--text")
+
                         div(class="form-row form-row--w1")
                             button(type="submit", class="button button--black button-color--pink") Сохранить
     

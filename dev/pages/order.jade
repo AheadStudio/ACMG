@@ -13,7 +13,7 @@ block content
                             div(class="form-group")
                                 div(class="form-group-label")
                                     label(for="method_1", class="form-label")
-                                        input(type="radio", id="method_1", name="method_1", required, data-jcf-class="form-item--radio", class="form-item form-item--radio")
+                                        input(type="radio", id="method_1", name="method_1", required, data-error="Это обязательное поле", aria-required="true", data-jcf-class="form-item--radio", class="form-item form-item--radio")
                                         span(class="form-item-title") Самовывоз из офиса (Москва, пер. Столярный, д. 3,)
                                 span(class="form-item-price") 0.– 
                             div(class="form-padding")
@@ -24,7 +24,7 @@ block content
                             div(class="form-group")
                                 div(class="form-group-label")
                                     label(for="method_2", class="form-label")
-                                        input(type="radio", id="method_2", name="method_1", required, data-jcf-class="form-item--radio", class="form-item form-item--radio")
+                                        input(type="radio", id="method_2", name="method_1", required, data-error="Это обязательное поле", aria-required="true", data-jcf-class="form-item--radio", class="form-item form-item--radio")
                                         span(class="form-item-title") Доставка курьером по Москве
                                 span(class="form-item-price") 300.–
                             div(class="form-padding")
@@ -54,7 +54,7 @@ block content
                             div(class="form-group")
                                 div(class="form-group-label")
                                     label(for="method_3", class="form-label")
-                                        input(type="radio", id="method_3", name="method_1", required, data-jcf-class="form-item--radio", class="form-item form-item--radio")
+                                        input(type="radio", id="method_3", name="method_1", required, data-error="Это обязательное поле", aria-required="true", data-jcf-class="form-item--radio", class="form-item form-item--radio")
                                         span(class="form-item-title") Доставка почтой России
                                 span(class="form-item-price") 400.–
                             div(class="form-padding")
@@ -88,14 +88,14 @@ block content
                             div(class="form-group")
                                 div(class="form-group-label")
                                     label(for="method_4", class="form-label")
-                                        input(type="radio", id="method_4", name="method_4", required, data-jcf-class="form-item--radio", class="form-item form-item--radio")
+                                        input(type="radio", id="method_4", name="method_4", required, data-error="Это обезательное поле", aria-required="true", data-jcf-class="form-item--radio", class="form-item form-item--radio")
                                         span(class="form-item-title") Банковской картой на сайте
                     div(class="form-row form-row--w1")
                         div(class="form-holder")
                             div(class="form-group")
                                 div(class="form-group-label")
                                     label(for="method_5", class="form-label")
-                                        input(type="radio", id="method_5", name="method_4", required, data-jcf-class="form-item--radio", class="form-item form-item--radio")
+                                        input(type="radio", id="method_5", name="method_4", required, data-error="Это обезательное поле", aria-required="true", data-jcf-class="form-item--radio", class="form-item form-item--radio")
                                         span(class="form-item-title") Наличными при получении
                                     
                 div(class="form-section")
@@ -103,12 +103,12 @@ block content
                         div(class="form-holder")
                             div(class="form-group")
                                 label(for="method_6", class="form-label")
-                                    input(type="checkbox", id="method_6", name="method_6", required, class="form-item form-item--checkbox")
+                                    input(type="checkbox", id="method_6", name="method_6", required, data-error="Это обезательное поле", aria-required="true" , class="form-item form-item--checkbox")
                                     span(class="form-item-title") Согласен с условиями 
                                         a(href="#", class="link link-black link-black--bottom") публичной оферты
                                     
                 div(class="form-row form-row--w1")
-                    button(type="submit", class="button button--black button-color--pink") Отправить
+                    button(type="submit", class="button button--black button-color--pink") Подтвердить заказ
                 
         div(class="order-basket")
             div(class="order-basket-container", data-sticky, data-sticky-offset-top="50")

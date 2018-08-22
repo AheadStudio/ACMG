@@ -27,7 +27,7 @@
             "name": "Главная",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             }
         },
@@ -35,7 +35,7 @@
             "name": "Каталог",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             }
         },
@@ -43,7 +43,7 @@
             "name": "Карточка аксессуара",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             }
         },
@@ -51,7 +51,7 @@
             "name": "Карточка бренда",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             }
         },
@@ -59,7 +59,7 @@
             "name": "Карточка мероприятия",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             }
         },
@@ -67,7 +67,7 @@
             "name": "Карточка журнала",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             }
         },
@@ -75,7 +75,7 @@
             "name": "Бренд",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             }
         },
@@ -83,7 +83,7 @@
             "name": "Журналы",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             }
         },
@@ -91,7 +91,7 @@
             "name": "Оформление заказа",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             }
         },
@@ -99,7 +99,7 @@
             "name": "Оформление заказа результат",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             }
         },
@@ -107,7 +107,7 @@
             "name": "Карзина",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             }
         },
@@ -115,7 +115,7 @@
             "name": "Каталог подгрузка",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             },
             "fordev": true
@@ -124,7 +124,25 @@
             "name": "Отзывы подгрузка",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
+                "mobile": "0"
+            },
+            "fordev": true
+        },
+        "form-register": {
+            "name": "Форма регистрации",
+            "progress": {
+                "desktop": "100",
+                "tablet": "100",
+                "mobile": "0"
+            },
+            "fordev": true
+        },
+        "form-auth": {
+            "name": "Форма авторизации",
+            "progress": {
+                "desktop": "100",
+                "tablet": "100",
                 "mobile": "0"
             },
             "fordev": true
@@ -133,7 +151,7 @@
             "name": "Бренды",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             }
         },
@@ -141,7 +159,7 @@
             "name": "О проекте",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             }
         },
@@ -149,7 +167,7 @@
             "name": "Доставка",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             }
         },
@@ -157,7 +175,7 @@
             "name": "Контакты",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             }
         },
@@ -165,7 +183,23 @@
             "name": "ЛК: Профиль",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
+                "mobile": "0"
+            }
+        },
+        "account-order": {
+            "name": "ЛК: Заказ",
+            "progress": {
+                "desktop": "100",
+                "tablet": "100",
+                "mobile": "0"
+            }
+        },
+        "account-favorite": {
+            "name": "ЛК: Избранное",
+            "progress": {
+                "desktop": "100",
+                "tablet": "100",
                 "mobile": "0"
             }
         },
@@ -173,7 +207,7 @@
             "name": "ЛК: Истории",
             "progress": {
                 "desktop": "100",
-                "tablet": "0",
+                "tablet": "100",
                 "mobile": "0"
             }
         }

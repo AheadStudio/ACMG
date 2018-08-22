@@ -13,12 +13,12 @@ block content
                 div(class="catalog-card-item catalog-card-item--65")
                     div(class="catalog-slider")
                         div(class="catalog-holder-image")
-                            img(src="../dummy/bcg.png")
+                            img(src="../dummy/bcg.png", class="catalog-image")
                         
-                            div(class="catalog-text-image") Как увеличить прибыль с помощью Big Data
+                        div(class="catalog-text-image") Как увеличить прибыль с помощью Big Data
                     
                     div(class="catalog-reviews")
-                        div(class="catalog-reviews-title") Отзывы от товаре
+                        div(class="catalog-reviews-title") Отзывы о товаре
                         
                         div(id="reviews", class="catalog-reviews-list")
                             div(class="catalog-reviews-item")
@@ -29,7 +29,7 @@ block content
                         
                     div(class="catalog-reviews-auth")
                         div(class="catalog-reviews-auth-text") Чтобы оставить свой отзыв, нужно авторизоваться
-                        button(type="submit", class="button button--border-black catalog-reviews-auth-button") Войти
+                        button(type="submit", href="form-auth.html", class="button button--border-black catalog-reviews-auth-button mfp-modal", data-mfp-class="form-popup", data-mfp-close-bcg="true", data-mfp-type="ajax", data-mfp-ajax-content="#form", data-mfp-close-inside="true") Войти
                             
                 div(class="catalog-card-item catalog-card-item--30")
                     div(class="catalog-item-info")

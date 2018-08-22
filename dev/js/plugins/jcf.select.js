@@ -112,10 +112,8 @@ jcf.addModule(function($, window) {
 			// detect device type and dropdown behavior
 			if (this.realElement.attr("placeholder")) {
 				this.fakeElement.find(".jcf-select-placeholder").text(this.realElement.attr("placeholder"));
-			}
-
-			if (this.realElement.attr("placeholder")) {
-				this.fakeElement.find(".jcf-select-placeholder").text(this.realElement.attr("placeholder"));
+			} else {
+				this.fakeElement.find(".jcf-select-placeholder").remove();
 			}
 
 			if (this.options.wrapNative) {
