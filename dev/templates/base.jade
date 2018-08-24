@@ -258,6 +258,11 @@ html(lang="ru", class="no-js", prefix="og:http://ogp.me/ns#")
 					include ../../prod/svg/close.svg
 		
 		
+		div(class="preloader")
+			div(class="preloader-bcg")
+			div(class="preloader-img")
+				include ../../prod/svg/logo.svg
+		
 		if page.code !== "order" && page.code !== "order-result"
 			footer(class="page-footer", itemscope, itemtype="http://schema.org/WPFooter")
 				div(class="footer-row")

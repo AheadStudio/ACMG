@@ -357,6 +357,39 @@
 					self.fixedHeader.init();
 					self.showProfileMenu();
 					self.showPsswords();
+					self.preloader.init();
+				},
+
+				preloader: {
+
+					preloaderContainer : null,
+
+					init: function() {
+						var self= this;
+
+						self.preloaderContainer = $(".preloader");
+
+						self.showHidePreloader();
+					},
+
+
+					showHidePreloader: function() {
+						var self = this;
+
+						self.preloaderContainer.addClass("active");
+
+						$sel.window.on("load", function() {
+
+							setTimeout(function() {
+								self.preloaderContainer.addClass("hide");
+							}, 1000);
+							setTimeout(function() {
+								self.preloaderContainer.remove();
+							}, 2000);
+						});
+
+					}
+
 				},
 
 				fixedHeader: {

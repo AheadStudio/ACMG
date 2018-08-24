@@ -105,6 +105,68 @@ body
 				opacity 1
 				transform translateY(0)
 
+.preloader
+	position fixed
+	top 0
+	right 0
+	left 0
+	bottom 0
+	width 100%
+	height 100%
+
+	z-index 111111
+
+	background #fff
+
+	transition all 1s $transitionAnimation
+
+	.preloader-bcg
+		position absolute
+		top 0
+		left 0
+		right 0
+		bottom 0
+		display block
+		width 100%
+		height 100%
+		background #000
+
+		transform translateY(100%)
+		opacity 0
+		transition all 1s $transitionAnimation
+
+	.preloader-img
+		position absolute
+		top 50%
+		left 50%
+
+		display block
+		max-width 215px
+		width 100%
+
+		margin-left -107.5px
+		margin-top -43px
+
+		opacity 0
+		transition all 1s $transitionAnimation
+
+	&.active
+		.preloader-bcg
+			opacity 1
+			transform translateY(0%)
+
+		.preloader-img
+			opacity 1
+
+
+	&.hide
+		background transparent
+
+		.preloader-bcg
+			transform translateY(-100%)
+
+		.preloader-img
+			opacity 0
 
 .page-header
 	padding 10px 30px
