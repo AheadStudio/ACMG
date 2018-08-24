@@ -21,7 +21,25 @@ block content
                             div(class="slider-item")
                                 img(src="../dummy/bag.png", class="slider-img")
                         div(class="slider-arrow-container")
-                    
+                
+                    div(class="catalog-item-info catalog-item-info--mobile")
+                        div(class="page-text")
+                            a(href="#", class="link link-black--bottom-reverse catalog-item-section") BRATISLAVW
+                            div(class="catalog-item-name") Сумка Barrymore
+                            div(class="catalog-item-price") 7 800.– 
+                            div(class="catalog-item-text") Сделай свою уникальную вышивку. Выбери цвет свитшот. Выбери один из трех вариантов расположения вышивки и ее цвет. Напиши свое имя рядом с брендом SNC. 
+                            div(class="catalog-item-composition") 
+                                dl
+                                    dt Состав:
+                                    dd 100% натуральная кожа
+                            form(class="form catalog-form")
+                                div(class="form-row catalog-form-order")
+                                    input(type="text", id="name", name="name", placeholder="1", class="form-item form-item--text form-catalog-order-number")
+                                    button(type="submit", class="button button--black button-color--pink form-catalog-order-submit") Купить
+                                    button(type="button", class="button form-catalog-order-favorite")
+                                        include ../../prod/svg/favorite.svg
+
+                
                     div(class="catalog-reviews")
                         div(class="catalog-reviews-title") Отзывы о товаре
                         
